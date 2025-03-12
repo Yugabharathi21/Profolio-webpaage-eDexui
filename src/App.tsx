@@ -3,6 +3,30 @@ import { Terminal, Gamepad2, Image, Youtube, Twitch, Mail, Github, Car, Palette,
 import { motion } from 'framer-motion';
 import projectsData from './data/projects.json';
 
+interface MultimediaItem {
+  title: string;
+  description: string;
+  image: string;
+}
+
+interface Project {
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+  githubUrl: string;
+  liveUrl?: string;
+  technologies: string[];
+}
+
+interface ProjectData {
+  projects: Project[];
+  multimedia: MultimediaItem[];
+  wip: Project[];
+}
+
+const typedProjectData = projectsData as ProjectData;
+
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -195,7 +219,7 @@ function App() {
         >
           <h2 className="text-2xl text-white mb-12 pixel-border-thin inline-block p-3 tracking-wide">FEATURED PROJECTS</h2>
           <div className="grid md:grid-cols-2 gap-8">
-            {projectsData.projects.map((project) => (
+            {typedProjectData.projects.map((project) => (
               <ProjectCard
                 key={project.id}
                 title={project.title}
@@ -203,6 +227,52 @@ function App() {
                 image={project.image}
                 githubUrl={project.githubUrl}
                 liveUrl={project.liveUrl}
+                technologies={project.technologies}
+              />
+            ))}
+          </div>
+        </motion.section>
+
+        {/* Multimedia Section */}
+        <motion.section 
+          id="multimedia" 
+          className="container mx-auto px-4 py-20"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="text-2xl text-white mb-12 pixel-border-thin inline-block p-3 tracking-wide">MULTIMEDIA SHOWCASE</h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            {typedProjectData.multimedia.map((item, index) => (
+              <MultimediaCard
+                key={index}
+                title={item.title}
+                description={item.description}
+                image={item.image}
+              />
+            ))}
+          </div>
+        </motion.section>
+
+        {/* Work in Progress Section */}
+        <motion.section 
+          id="wip" 
+          className="container mx-auto px-4 py-20"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="text-2xl text-white mb-12 pixel-border-thin inline-block p-3 tracking-wide">WORK IN PROGRESS</h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            {typedProjectData.wip.map((project) => (
+              <ProjectCard
+                key={project.id}
+                title={`[WIP] ${project.title}`}
+                description={project.description}
+                image={project.image}
+                githubUrl={project.githubUrl}
                 technologies={project.technologies}
               />
             ))}
@@ -362,6 +432,38 @@ function ProjectCard({
             </a>
           )}
         </div>
+      </div>
+    </motion.div>
+  );
+}
+
+function MultimediaCard({ 
+  title, 
+  description, 
+  image
+}: { 
+  title: string; 
+  description: string; 
+  image: string;
+}) {
+  return (
+    <motion.div 
+      className="terminal-window overflow-hidden group cursor-pointer"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+      whileHover={{ scale: 1.02 }}
+      onClick={() => window.open(image, '_blank')}
+    >
+      <img 
+        src={image} 
+        alt={title} 
+        className="w-full h-48 object-cover hover:grayscale-0 transition-all transform hover:scale-105" 
+      />
+      <div className="p-6">
+        <h3 className="text-xl text-white mb-3 tracking-wide">{title}</h3>
+        <p className="text-white/70">{description}</p>
       </div>
     </motion.div>
   );

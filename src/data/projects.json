@@ -2,21 +2,76 @@
   "projects": [
     {
       "id": 1,
+      "title": "Portfolio Website",
+      "description": "A modern portfolio website built with React and Tailwind CSS",
+      "image": "https://raw.githubusercontent.com/Yugabharathi21/Profolio-webpaage-eDexui/refs/heads/main/public/preview.png?token=GHSAT0AAAAAAC4YSOSL5RYCVYRUSQSOPO5SZ6RSZUA",
+      "githubUrl": "https://github.com/Yugabharathi21/Portfolio-Webpage",
+      "liveUrl": "https://yugabharathi.dev",
+      "technologies": ["React", "Tailwind CSS", "TypeScript", "Framer Motion"]
+    },
+    {
+      "id": 2,
       "title": "FiveM HUD for Qbox",
       "description": "Custom HUD forked and revamp by me from qbx-hud",
       "image": "https://private-user-images.githubusercontent.com/102886591/415865001-5fc102b8-0b4f-4961-bf4c-2f33c5a166a2.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDE3NzYyMjksIm5iZiI6MTc0MTc3NTkyOSwicGF0aCI6Ii8xMDI4ODY1OTEvNDE1ODY1MDAxLTVmYzEwMmI4LTBiNGYtNDk2MS1iZjRjLTJmMzNjNWExNjZhMi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwMzEyJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDMxMlQxMDM4NDlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT00OWI5MjE2YjkzOTM5MTczY2I3MjhhYzkzY2M1YThiYzFhOTg3N2M2NmViNmYwNWI4ZmVhNzk3ZGZhMzQ2NmM0JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.oP0i5U4WV_HyS4z4A3GSSv5XYR6ZuszbsXH69E8NVMQ",
       "githubUrl": "https://github.com/Yugabharathi21/spz-hud-fivem",
       "liveUrl": "https://your-fivem-server.com",
       "technologies": ["Lua", "JavaScript", "FiveM API","HTML","css"]
+    }
+  ],
+  "multimedia": [
+    {
+      "title": "YouTube Thumbnail Design",
+      "description": "Custom thumbnail design for gaming content",
+      "image": "https://media.discordapp.net/attachments/932869514138357791/1335631066488377466/ets2th.png?ex=67d24f1d&is=67d0fd9d&hm=42f22f46c5b804b099159fa5ac7bdbf24b38b5ddcf78d4140856009546ac461a&=&width=1522&height=856"
+    },
+    {
+      "title": "YouTube Thumbnail Design",
+      "description": "A thumbnail made for my client for freelancing",
+      "image": "https://media.discordapp.net/attachments/932869514138357791/1335631015019937823/tonybro.png?ex=67d24f10&is=67d0fd90&hm=a3d18b1425dd210931c0f8a2a0b27ef22f726796ea947addb69cc26417b1750a&=&width=1522&height=856"
+    },
+    {
+      "title": "YouTube Thumbnail Design",
+      "description": "A thumbnail made for my client for freelancing",
+      "image": "https://media.discordapp.net/attachments/932869514138357791/1335630898510692382/wils.png?ex=67d24ef5&is=67d0fd75&hm=e9978b15b90bd79ac80ed733c1dac79d079e66d68aa9f9dc73aea99afac3b47f&=&width=1522&height=856"
+    },
+    {
+      "title": "YouTube Thumbnail Design",
+      "description": "Custom thumbnail design for gaming content",
+      "image": "https://media.discordapp.net/attachments/932869514138357791/1135204127207596192/rbss_copy.jpg?ex=67d2df3a&is=67d18dba&hm=1d90da08789e0e0fef877ea777c1eb268d3d33365ec2096b71370e5f37c08e7a&=&width=1522&height=856"
+    },
+    {
+      "title": "YouTube Thumbnail Design",
+      "description": "Custom thumbnail design for gaming content",
+      "image": "https://media.discordapp.net/attachments/932869514138357791/1335630942974247036/lightibg_JVand_Monkey.png?ex=67d24eff&is=67d0fd7f&hm=c8ef4620e0df6f764713237f54ac4edc35619e88c5163aa4dd1f66c10e7540ba&=&width=1522&height=856"
+    },
+    {
+      "title": "YouTube Logo",
+      "description": "A Logo Made For my clint in freelanceing job",
+      "image": "https://media.discordapp.net/attachments/1320713447503171634/1324682879707381802/SG.png?ex=67d2b091&is=67d15f11&hm=dc94442a4ceb30a00558bbddcf6093868257d14277aaee4aa6ac862b7acd9ee9&=&width=856&height=856"
+    },
+    {
+      "title": "YouTube Banner Design",
+      "description": "A Youtube Banner Made For my clint in freelanceing job",
+      "image": "https://media.discordapp.net/attachments/1320713447503171634/1324682878457610260/banner_sg.png?ex=67d2b091&is=67d15f11&hm=176c5a01c2a67f27eaa4003d36ab09a5621d42dee7a4adbb193869343ac8a3d0&=&width=1521&height=856"
+    }
+  ],
+  "wip": [
+    {
+      "id": 1,
+      "title": "FiveM Server Dashboard",
+      "description": "A web-based dashboard for managing FiveM server resources and player data",
+      "image": "/images/dashboard-wip.png",
+      "githubUrl": "https://github.com/Yugabharathi21/fivem-dashboard",
+      "technologies": ["React", "Node.js", "Express", "MongoDB"]
     },
     {
       "id": 2,
-      "title": "Portfolio Webpage",
-      "description": "a perfect minimal eDex UI profolio webpage for me.",
-      "image": "",
-      "githubUrl": "https://github.com/Yugabharathi21/Profolio-webpaage-eDexui",
-      "liveUrl": "https://your-portfolio.com/stream-design",
-      "technologies": ["HTML","css", "ts", "React-js"]
+      "title": "Stream Overlay Generator",
+      "description": "Web application for creating custom stream overlays with real-time preview",
+      "image": "/images/overlay-generator-wip.png",
+      "githubUrl": "https://github.com/Yugabharathi21/overlay-generator",
+      "technologies": ["React", "Canvas API", "WebGL", "Socket.io"]
     }
   ]
 } 
