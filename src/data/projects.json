@@ -33,6 +33,11 @@
     {
       "title": "YouTube Thumbnail Design",
       "description": "A thumbnail made for my client for freelancing",
+      "image": "https://media.discordapp.net/attachments/1098676743457476689/1332360764383826031/batman_monkey_1.png?ex=67d246e8&is=67d0f568&hm=dedf8d1170bdc95d58024769a7dd0e0c357bd0a172a9772f960ec5ad2da5bba6&=&width=550&height=309"
+    },
+    {
+      "title": "YouTube Thumbnail Design",
+      "description": "A thumbnail made for my client for freelancing",
       "image": "https://media.discordapp.net/attachments/932869514138357791/1335630898510692382/wils.png?ex=67d24ef5&is=67d0fd75&hm=e9978b15b90bd79ac80ed733c1dac79d079e66d68aa9f9dc73aea99afac3b47f&=&width=1522&height=856"
     },
     {
@@ -46,6 +51,11 @@
       "image": "https://media.discordapp.net/attachments/932869514138357791/1335630942974247036/lightibg_JVand_Monkey.png?ex=67d24eff&is=67d0fd7f&hm=c8ef4620e0df6f764713237f54ac4edc35619e88c5163aa4dd1f66c10e7540ba&=&width=1522&height=856"
     },
     {
+      "title": "YouTube Thumbnail Design",
+      "description": "Custom thumbnail design for gaming content",
+      "image": "https://media.discordapp.net/attachments/1098676743457476689/1332360797841784852/bwrbjv_copy.jpg?ex=67d246f0&is=67d0f570&hm=01d8eccb0fe61a1cc55f30c81b4cf28cc0c51c262476bda66e8b1bf28cf684b1&=&width=1522&height=856"
+    },
+    {
       "title": "YouTube Logo",
       "description": "A Logo Made For my clint in freelanceing job",
       "image": "https://media.discordapp.net/attachments/1320713447503171634/1324682879707381802/SG.png?ex=67d2b091&is=67d15f11&hm=dc94442a4ceb30a00558bbddcf6093868257d14277aaee4aa6ac862b7acd9ee9&=&width=856&height=856"
@@ -54,23 +64,34 @@
       "title": "YouTube Banner Design",
       "description": "A Youtube Banner Made For my clint in freelanceing job",
       "image": "https://media.discordapp.net/attachments/1320713447503171634/1324682878457610260/banner_sg.png?ex=67d2b091&is=67d15f11&hm=176c5a01c2a67f27eaa4003d36ab09a5621d42dee7a4adbb193869343ac8a3d0&=&width=1521&height=856"
+    },
+    {
+      "title": "YouTube Banner Design",
+      "description": "A Youtube Banner Made For my clint in freelanceing job",
+      "image": "https://media.discordapp.net/attachments/1188299145715400784/1339428879823274084/B_R_U_C_E_Banner.png?ex=67d2485a&is=67d0f6da&hm=1af97d6679a82d7b0039ed610812039d4deb47280a53b17ad22e8601709765e6&=&width=1522&height=856"
+    },
+    {
+      "title": "YouTube Banner Design",
+      "description": "A Youtube Banner Made For my clint in freelanceing job",
+      "image": "https://media.discordapp.net/attachments/1188299145715400784/1332361973794603101/prince_YT_Banner_copy.png?ex=67d24808&is=67d0f688&hm=61a70399f50b0f3c19bc1ea99cc68cf2e162ca0d0201bb83c1fb2f2023a26391&=&width=1522&height=856"
     }
+
   ],
   "wip": [
     {
       "id": 1,
-      "title": "FiveM Server Dashboard",
-      "description": "A web-based dashboard for managing FiveM server resources and player data",
-      "image": "/images/dashboard-wip.png",
-      "githubUrl": "https://github.com/Yugabharathi21/fivem-dashboard",
+      "title": "A Organic selling website",
+      "description": "it is a website made for 24 Hackathon Event by NITT's what the figma event",
+      "image": "https://raw.githubusercontent.com/Yugabharathi21/Code_Red_WhatTheFigma/refs/heads/main/image.png",
+      "githubUrl": "https://github.com/Yugabharathi21/Code_Red_WhatTheFigma",
       "technologies": ["React", "Node.js", "Express", "MongoDB"]
     },
     {
       "id": 2,
-      "title": "Stream Overlay Generator",
-      "description": "Web application for creating custom stream overlays with real-time preview",
-      "image": "/images/overlay-generator-wip.png",
-      "githubUrl": "https://github.com/Yugabharathi21/overlay-generator",
+      "title": "ThinkForge - a Study planning helper Chat Bot",
+      "description": "This is a website made for 24 Hackathon of KEC Hackathon",
+      "image": "WhatsApp Image 2025-02-27 at 22.48.43_a8a638ed.jpg",
+      "githubUrl": "https://github.com/Yugabharathi21/Think-Forge",
       "technologies": ["React", "Canvas API", "WebGL", "Socket.io"]
     }
   ]
