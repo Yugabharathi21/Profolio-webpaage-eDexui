@@ -13,7 +13,7 @@
       "id": 2,
       "title": "Portfolio Webpage",
       "description": "a perfect minimal eDex UI profolio webpage for me.",
-      "image": "https://images.unsplash.com/photo-1561736778-92e52a7769ef?auto=format&fit=crop&q=80&w=800",
+      "image": "",
       "githubUrl": "https://github.com/Yugabharathi21/Profolio-webpaage-eDexui",
       "liveUrl": "https://your-portfolio.com/stream-design",
       "technologies": ["HTML","css", "ts", "React-js"]
