@@ -311,6 +311,84 @@ function App() {
           <div className="terminal-window p-8">
             <p className="text-white/90 mb-4 terminal-text text-sm">$ contact.exe --init</p>
             <p className="text-white/70 mb-6 text-lg terminal-text">{'>'} Ready to collaborate? Let's connect!</p>
+            
+            {/* Contact Form */}
+            <form 
+              className="max-w-2xl mb-8"
+              onSubmit={async (e) => {
+                e.preventDefault();
+                const form = e.target as HTMLFormElement;
+                const formData = new FormData(form);
+                
+                const webhookUrl = "https://discord.com/api/webhooks/1334197974577709200/x-9G1IuJjmjUW5f-gJN4zJPdYDRyT1PbMLvvwcUWsTEgpbFbBDUMENVBVCjNH6LU7cNM";
+                
+                try {
+                  const response = await fetch(webhookUrl, {
+                    method: 'POST',
+                    headers: {
+                      'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                      content: `New Contact Form Submission\n\nName: ${formData.get('name')}\nEmail: ${formData.get('email')}\nMessage: ${formData.get('message')}`,
+                    }),
+                  });
+
+                  if (response.ok) {
+                    alert('Message sent successfully!');
+                    form.reset();
+                  } else {
+                    throw new Error('Failed to send message');
+                  }
+                } catch (error) {
+                  alert('Failed to send message. Please try again later.');
+                }
+              }}
+            >
+              <div className="mb-4">
+                <label htmlFor="name" className="block text-white/80 mb-2 terminal-text">Name:</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  className="w-full bg-black/50 border border-white/10 text-white p-3 rounded-md focus:border-emerald-400/50 focus:outline-none terminal-text"
+                  placeholder="Enter your name"
+                />
+              </div>
+              
+              <div className="mb-4">
+                <label htmlFor="email" className="block text-white/80 mb-2 terminal-text">Email:</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  className="w-full bg-black/50 border border-white/10 text-white p-3 rounded-md focus:border-emerald-400/50 focus:outline-none terminal-text"
+                  placeholder="Enter your email"
+                />
+              </div>
+              
+              <div className="mb-6">
+                <label htmlFor="message" className="block text-white/80 mb-2 terminal-text">Message:</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  required
+                  rows={4}
+                  className="w-full bg-black/50 border border-white/10 text-white p-3 rounded-md focus:border-emerald-400/50 focus:outline-none terminal-text"
+                  placeholder="Enter your message"
+                />
+              </div>
+              
+              <button
+                type="submit"
+                className="bg-emerald-500/10 text-emerald-400 px-6 py-3 rounded-md hover:bg-emerald-500/20 transition-all glass-card border border-emerald-400/20 hover:border-emerald-400/40 terminal-text"
+              >
+                Send Message
+              </button>
+            </form>
+
+            {/* Social Links */}
             <div className="flex gap-6">
               <a 
                 href="https://www.linkedin.com/in/yuga-bharathi-jaisankar-2a426a291/" 
