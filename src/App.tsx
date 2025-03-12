@@ -115,61 +115,80 @@ function App() {
         {/* Hero Section */}
         <section id="home" className="container mx-auto px-4 pt-20">
           <motion.div 
-            className="terminal-window p-8"
+            className="terminal-window pl-8 relative overflow-hidden"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
           >
-            <motion.div 
-              className="flex items-center gap-3 mb-6"
-              {...fadeInUp}
-            >
-              <Terminal className="w-5 h-5 text-white/80" />
-              <span className="text-white/80 text-sm tracking-wider terminal-text">[system@terminal] ~ $</span>
-            </motion.div>
-            <motion.h1 
-              className="text-4xl font-bold mb-6 text-white tracking-tight"
-              {...fadeInUp}
-            >
-              YUGA BHARATHI JAISANKAR
-            </motion.h1>
-            <motion.p 
-              className="text-lg text-white/80 mb-6 font-light"
-              {...fadeInUp}
-            >
-              II Year Computer Science Engineering @ Kongu Engineering College, Erode
-            </motion.p>
-            <motion.div 
-              className="flex gap-6 mb-6"
-              variants={staggerContainer}
-              initial="initial"
-              animate="animate"
-            >
-              <a 
-                href="https://github.com/Yugabharathi21" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="text-white/80 hover:text-white transition-all"
+            <div className="flex flex-col md:flex-row md:items-center gap-8 relative">
+              {/* Terminal content on the left */}
+              <div className="flex-1 z-10 py-8">
+                <motion.div 
+                  className="flex items-center gap-3 mb-6"
+                  {...fadeInUp}
+                >
+                  <Terminal className="w-5 h-5 text-white/80" />
+                  <span className="text-white/80 text-sm tracking-wider terminal-text">[system@terminal] ~ $</span>
+                </motion.div>
+                <motion.h1 
+                  className="text-4xl font-bold mb-6 text-white tracking-tight"
+                  {...fadeInUp}
+                >
+                  YUGA BHARATHI JAISANKAR
+                </motion.h1>
+                <motion.p 
+                  className="text-lg text-white/80 mb-6 font-light"
+                  {...fadeInUp}
+                >
+                  II Year Computer Science Engineering @ Kongu Engineering College, Erode
+                </motion.p>
+                <motion.div 
+                  className="flex gap-6 mb-6"
+                  variants={staggerContainer}
+                  initial="initial"
+                  animate="animate"
+                >
+                  <a 
+                    href="https://github.com/Yugabharathi21" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="text-white/80 hover:text-white transition-all"
+                  >
+                    <Github className="w-5 h-5" />
+                  </a>
+                  <a 
+                    href="https://www.youtube.com/@SPz-G21" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="text-white/80 hover:text-white transition-all"
+                  >
+                    <Youtube className="w-5 h-5" />
+                  </a>
+                  <a 
+                    href="https://www.linkedin.com/in/yuga-bharathi-jaisankar-2a426a291/" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="text-white/80 hover:text-white transition-all"
+                  >
+                    <Mail className="w-5 h-5" />
+                  </a>
+                </motion.div>
+              </div>
+              
+              {/* Profile Image */}
+              <motion.div
+                className="md:relative md:w-[280px] absolute right-[8rem] top-0 bottom-0 overflow-hidden"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1 }}
               >
-                <Github className="w-5 h-5" />
-              </a>
-              <a 
-                href="https://www.youtube.com/@SPz-G21" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="text-white/80 hover:text-white transition-all"
-              >
-                <Youtube className="w-5 h-5" />
-              </a>
-              <a 
-                href="https://www.linkedin.com/in/yuga-bharathi-jaisankar-2a426a291/" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="text-white/80 hover:text-white transition-all"
-              >
-                <Mail className="w-5 h-5" />
-              </a>
-            </motion.div>
+                <motion.img
+                  src="/images/profile-bw.png"
+                  alt="Profile"
+                  className="w-[800px] h-full object-cover object-[80%_top] scale-135"
+                />
+              </motion.div>
+            </div>
           </motion.div>
         </section>
 

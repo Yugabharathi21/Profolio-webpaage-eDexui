@@ -4,7 +4,7 @@
       "id": 1,
       "title": "Portfolio Website",
       "description": "A modern portfolio website built with React and Tailwind CSS",
-      "image": "https://raw.githubusercontent.com/Yugabharathi21/Profolio-webpaage-eDexui/refs/heads/main/public/preview.png?token=GHSAT0AAAAAAC4YSOSL2ZZXTLTJKOSO26MAZ6RUCSQ",
+      "image": "https://cdn.discordapp.com/attachments/1174513055405719674/1349442579158143057/preview.png?ex=67d31dd6&is=67d1cc56&hm=d101add2635ab6325b5999eff769a35dd10ff3f242ef82d18f07f6743a409efa&",
       "githubUrl": "https://github.com/Yugabharathi21/Portfolio-Webpage",
       "liveUrl": "https://yugabharathi.dev",
       "technologies": ["React", "Tailwind CSS", "TypeScript", "Framer Motion"]
@@ -22,7 +22,7 @@
       "id": 3,
       "title": "FiveM HUD for Qbox",
       "description": "Custom HUD forked and revamp by me from qbx-hud",
-      "image": "https://private-user-images.githubusercontent.com/102886591/415865001-5fc102b8-0b4f-4961-bf4c-2f33c5a166a2.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDE3NzYyMjksIm5iZiI6MTc0MTc3NTkyOSwicGF0aCI6Ii8xMDI4ODY1OTEvNDE1ODY1MDAxLTVmYzEwMmI4LTBiNGYtNDk2MS1iZjRjLTJmMzNjNWExNjZhMi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwMzEyJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDMxMlQxMDM4NDlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT00OWI5MjE2YjkzOTM5MTczY2I3MjhhYzkzY2M1YThiYzFhOTg3N2M2NmViNmYwNWI4ZmVhNzk3ZGZhMzQ2NmM0JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.oP0i5U4WV_HyS4z4A3GSSv5XYR6ZuszbsXH69E8NVMQ",
+      "image": "https://media.discordapp.net/attachments/1174513055405719674/1349442816727847053/415865001-5fc102b8-0b4f-4961-bf4c-2f33c5a166a2.png?ex=67d31e0e&is=67d1cc8e&hm=7c8772b66a04b2f225f3d90bb33b5f3a54fc8661ddc69ae167bf5acf3b0532b1&=&width=550&height=309",
       "githubUrl": "https://github.com/Yugabharathi21/spz-hud-fivem",
       "liveUrl": "https://your-fivem-server.com",
       "technologies": ["Lua", "JavaScript", "FiveM API","HTML","css"]
@@ -91,7 +91,7 @@
       "id": 1,
       "title": "A Organic selling website",
       "description": "it is a website made for 24 Hackathon Event by NITT's what the figma event",
-      "image": "https://raw.githubusercontent.com/Yugabharathi21/Code_Red_WhatTheFigma/refs/heads/main/image.png",
+      "image": "https://media.discordapp.net/attachments/1174513055405719674/1349443146118856787/image.png?ex=67d31e5d&is=67d1ccdd&hm=6692690c803228e6fd343ff29c4a99c46d0fdc00ab548fd2b84d004d2ce34536&=&width=1601&height=856",
       "githubUrl": "https://github.com/Yugabharathi21/Code_Red_WhatTheFigma",
       "technologies": ["React", "Node.js", "Express", "MongoDB"]
     },
@@ -99,7 +99,7 @@
       "id": 2,
       "title": "ThinkForge - a Study planning helper Chat Bot",
       "description": "This is a website made for 24 Hackathon of KEC Hackathon",
-      "image": "WhatsApp Image 2025-02-27 at 22.48.43_a8a638ed.jpg",
+      "image": "https://media.discordapp.net/attachments/1174513055405719674/1349443046579896320/WhatsApp_Image_2025-02-27_at_22.48.43_fffe6b5c.jpg?ex=67d31e45&is=67d1ccc5&hm=d23e24bc35f4207ebb03d00f90049744f5e6bd05b83e3a6f6965542f842d9e89&=&width=387&height=960",
       "githubUrl": "https://github.com/Yugabharathi21/Think-Forge",
       "technologies": ["React", "Node.js", "Express", "MongoDB","FAST API"]
     }
