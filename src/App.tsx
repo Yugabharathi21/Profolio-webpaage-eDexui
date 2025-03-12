@@ -121,16 +121,28 @@ function App() {
               initial="initial"
               animate="animate"
             >
-              <a href="#" className="text-white/80 hover:text-white transition-all">
+              <a 
+                href="https://github.com/Yugabharathi21" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-white/80 hover:text-white transition-all"
+              >
                 <Github className="w-5 h-5" />
               </a>
-              <a href="#" className="text-white/80 hover:text-white transition-all">
+              <a 
+                href="https://www.youtube.com/@SPz-G21" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-white/80 hover:text-white transition-all"
+              >
                 <Youtube className="w-5 h-5" />
               </a>
-              <a href="#" className="text-white/80 hover:text-white transition-all">
-                <Twitch className="w-5 h-5" />
-              </a>
-              <a href="#" className="text-white/80 hover:text-white transition-all">
+              <a 
+                href="https://www.linkedin.com/in/yuga-bharathi-jaisankar-2a426a291/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-white/80 hover:text-white transition-all"
+              >
                 <Mail className="w-5 h-5" />
               </a>
             </motion.div>
@@ -210,14 +222,29 @@ function App() {
             <p className="text-white/90 mb-4 terminal-text text-sm">$ contact.exe --init</p>
             <p className="text-white/70 mb-6 text-lg terminal-text">{'>'} Ready to collaborate? Let's connect!</p>
             <div className="flex gap-6">
-              <a href="#" className="text-white/80 hover:text-white transition-all glass-card p-3">
+              <a 
+                href="https://www.linkedin.com/in/yuga-bharathi-jaisankar-2a426a291/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-white/80 hover:text-white transition-all glass-card p-3"
+              >
                 <Mail className="w-6 h-6" />
               </a>
-              <a href="#" className="text-white/80 hover:text-white transition-all glass-card p-3">
+              <a 
+                href="https://github.com/Yugabharathi21" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-white/80 hover:text-white transition-all glass-card p-3"
+              >
                 <Github className="w-6 h-6" />
               </a>
-              <a href="#" className="text-white/80 hover:text-white transition-all glass-card p-3">
-                <Twitch className="w-6 h-6" />
+              <a 
+                href="https://www.youtube.com/@SPz-G21" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-white/80 hover:text-white transition-all glass-card p-3"
+              >
+                <Youtube className="w-6 h-6" />
               </a>
             </div>
           </div>

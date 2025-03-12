@@ -2,21 +2,21 @@
   "projects": [
     {
       "id": 1,
-      "title": "FiveM Server Scripts",
-      "description": "Custom gameplay mechanics and server features",
-      "image": "https://images.unsplash.com/photo-1627398242454-45a1465c2479?auto=format&fit=crop&q=80&w=800",
-      "githubUrl": "https://github.com/yourusername/fivem-scripts",
+      "title": "FiveM HUD for Qbox",
+      "description": "Custom HUD forked and revamp by me from qbx-hud",
+      "image": "https://private-user-images.githubusercontent.com/102886591/415865001-5fc102b8-0b4f-4961-bf4c-2f33c5a166a2.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDE3NzYyMjksIm5iZiI6MTc0MTc3NTkyOSwicGF0aCI6Ii8xMDI4ODY1OTEvNDE1ODY1MDAxLTVmYzEwMmI4LTBiNGYtNDk2MS1iZjRjLTJmMzNjNWExNjZhMi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwMzEyJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDMxMlQxMDM4NDlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT00OWI5MjE2YjkzOTM5MTczY2I3MjhhYzkzY2M1YThiYzFhOTg3N2M2NmViNmYwNWI4ZmVhNzk3ZGZhMzQ2NmM0JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.oP0i5U4WV_HyS4z4A3GSSv5XYR6ZuszbsXH69E8NVMQ",
+      "githubUrl": "https://github.com/Yugabharathi21/spz-hud-fivem",
       "liveUrl": "https://your-fivem-server.com",
-      "technologies": ["Lua", "JavaScript", "FiveM API"]
+      "technologies": ["Lua", "JavaScript", "FiveM API","HTML","css"]
     },
     {
       "id": 2,
-      "title": "Stream Design Package",
-      "description": "Complete branding and overlay design for Twitch streamers",
+      "title": "Portfolio Webpage",
+      "description": "a perfect minimal eDex UI profolio webpage for me.",
       "image": "https://images.unsplash.com/photo-1561736778-92e52a7769ef?auto=format&fit=crop&q=80&w=800",
-      "githubUrl": "https://github.com/yourusername/stream-design",
+      "githubUrl": "https://github.com/Yugabharathi21/Profolio-webpaage-eDexui",
       "liveUrl": "https://your-portfolio.com/stream-design",
-      "technologies": ["Adobe Photoshop", "After Effects", "Figma"]
+      "technologies": ["HTML","css", "ts", "React-js"]
     }
   ]
 } 
