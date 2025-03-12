@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Terminal, Gamepad2, Image, Youtube, Twitch, Mail, Github, Car, Palette, Menu, X, ExternalLink, FileText } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import projectsData from './data/projects.json';
 
 interface MultimediaItem {
@@ -326,6 +326,14 @@ function App() {
       <footer className="container mx-auto px-4 py-8 text-center">
         <p className="text-sm text-white/80 pixel-border-thin inline-block p-2 tracking-wider terminal-text">[END OF LINE]</p>
       </footer>
+
+      {/* Image Preview Modal */}
+      <ImagePreviewModal
+        image={typedProjectData.multimedia[0].image}
+        title={typedProjectData.multimedia[0].title}
+        isOpen={false}
+        onClose={() => {}}
+      />
     </div>
   );
 }
@@ -437,6 +445,46 @@ function ProjectCard({
   );
 }
 
+function ImagePreviewModal({ 
+  image, 
+  title, 
+  isOpen, 
+  onClose 
+}: { 
+  image: string; 
+  title: string;
+  isOpen: boolean;
+  onClose: () => void;
+}) {
+  if (!isOpen) return null;
+
+  return (
+    <motion.div 
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4"
+    >
+      <div className="relative max-w-7xl w-full">
+        <button 
+          onClick={onClose}
+          className="absolute top-4 right-4 text-white/80 hover:text-white bg-black/50 hover:bg-black/70 rounded-full p-2 transition-all"
+        >
+          <X className="w-6 h-6" />
+        </button>
+        <motion.img 
+          initial={{ scale: 0.9, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          exit={{ scale: 0.9, opacity: 0 }}
+          src={image} 
+          alt={title} 
+          className="w-full h-auto rounded-lg shadow-2xl"
+        />
+      </div>
+    </motion.div>
+  );
+}
+
 function MultimediaCard({ 
   title, 
   description, 
@@ -446,26 +494,41 @@ function MultimediaCard({
   description: string; 
   image: string;
 }) {
+  const [isPreviewOpen, setIsPreviewOpen] = useState(false);
+
   return (
-    <motion.div 
-      className="terminal-window overflow-hidden group cursor-pointer"
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
-      whileHover={{ scale: 1.02 }}
-      onClick={() => window.open(image, '_blank')}
-    >
-      <img 
-        src={image} 
-        alt={title} 
-        className="w-full h-48 object-cover hover:grayscale-0 transition-all transform hover:scale-105" 
-      />
-      <div className="p-6">
-        <h3 className="text-xl text-white mb-3 tracking-wide">{title}</h3>
-        <p className="text-white/70">{description}</p>
-      </div>
-    </motion.div>
+    <>
+      <motion.div 
+        className="terminal-window overflow-hidden group cursor-pointer"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        whileHover={{ scale: 1.02 }}
+        onClick={() => setIsPreviewOpen(true)}
+      >
+        <img 
+          src={image} 
+          alt={title} 
+          className="w-full h-48 object-cover hover:grayscale-0 transition-all transform hover:scale-105" 
+        />
+        <div className="p-6">
+          <h3 className="text-xl text-white mb-3 tracking-wide">{title}</h3>
+          <p className="text-white/70">{description}</p>
+        </div>
+      </motion.div>
+
+      <AnimatePresence>
+        {isPreviewOpen && (
+          <ImagePreviewModal
+            image={image}
+            title={title}
+            isOpen={isPreviewOpen}
+            onClose={() => setIsPreviewOpen(false)}
+          />
+        )}
+      </AnimatePresence>
+    </>
   );
 }
 
