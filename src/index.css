@@ -1,12 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;500;600;700&display=swap');
-
 @layer base {
+  :root {
+    @apply bg-black;
+  }
+
+  html, body {
+    @apply bg-black min-h-screen;
+  }
+
   body {
-    @apply antialiased bg-black font-['Share_Tech_Mono'];
+    @apply antialiased font-['Share_Tech_Mono'];
+  }
+
+  #root {
+    @apply min-h-screen bg-black;
   }
 
   h1, h2, h3, h4, h5, h6 {

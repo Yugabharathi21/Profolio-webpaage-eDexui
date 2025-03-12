@@ -179,6 +179,7 @@ function App() {
               icon={<Palette className="w-6 h-6" />}
               title="Creative Tools"
               items={['Adobe Photoshop', 'After Effects', 'Premiere Pro', 'Blender', 'Figma']}
+              isCreativeTools={true}
             />
           </div>
         </motion.section>
@@ -259,7 +260,12 @@ function App() {
   );
 }
 
-function SkillCard({ icon, title, items }: { icon: React.ReactNode; title: string; items: string[] }) {
+function SkillCard({ icon, title, items, isCreativeTools = false }: { 
+  icon: React.ReactNode; 
+  title: string; 
+  items: string[];
+  isCreativeTools?: boolean;
+}) {
   return (
     <motion.div 
       className="terminal-window p-6"
