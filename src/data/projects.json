@@ -4,13 +4,22 @@
       "id": 1,
       "title": "Portfolio Website",
       "description": "A modern portfolio website built with React and Tailwind CSS",
-      "image": "https://raw.githubusercontent.com/Yugabharathi21/Profolio-webpaage-eDexui/refs/heads/main/public/preview.png?token=GHSAT0AAAAAAC4YSOSL5RYCVYRUSQSOPO5SZ6RSZUA",
+      "image": "https://raw.githubusercontent.com/Yugabharathi21/Profolio-webpaage-eDexui/refs/heads/main/public/preview.png?token=GHSAT0AAAAAAC4YSOSL2ZZXTLTJKOSO26MAZ6RUCSQ",
       "githubUrl": "https://github.com/Yugabharathi21/Portfolio-Webpage",
       "liveUrl": "https://yugabharathi.dev",
       "technologies": ["React", "Tailwind CSS", "TypeScript", "Framer Motion"]
     },
     {
       "id": 2,
+      "title": "Event Promotion Website",
+      "description": "A modern Fallout 3 Termal UI design Event promotion website for Cerscita 2k25",
+      "image": "https://media.licdn.com/dms/image/v2/D5622AQHLomv6obP2Iw/feedshare-shrink_2048_1536/B56ZTy6JeFHsAo-/0/1739242119253?e=1744848000&v=beta&t=s6il7VskCOd52Hpw6rmKJ8WUiNtAwAQ_17YHtndJcMA",
+      "githubUrl": "https://github.com/Yugabharathi21/final-crescita/tree/main",
+      "liveUrl": "https://cse-crescita-25.netlify.app/",
+      "technologies": ["React", "Tailwind CSS", "TypeScript"]
+    },
+    {
+      "id": 3,
       "title": "FiveM HUD for Qbox",
       "description": "Custom HUD forked and revamp by me from qbx-hud",
       "image": "https://private-user-images.githubusercontent.com/102886591/415865001-5fc102b8-0b4f-4961-bf4c-2f33c5a166a2.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDE3NzYyMjksIm5iZiI6MTc0MTc3NTkyOSwicGF0aCI6Ii8xMDI4ODY1OTEvNDE1ODY1MDAxLTVmYzEwMmI4LTBiNGYtNDk2MS1iZjRjLTJmMzNjNWExNjZhMi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwMzEyJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDMxMlQxMDM4NDlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT00OWI5MjE2YjkzOTM5MTczY2I3MjhhYzkzY2M1YThiYzFhOTg3N2M2NmViNmYwNWI4ZmVhNzk3ZGZhMzQ2NmM0JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.oP0i5U4WV_HyS4z4A3GSSv5XYR6ZuszbsXH69E8NVMQ",
@@ -92,7 +101,7 @@
       "description": "This is a website made for 24 Hackathon of KEC Hackathon",
       "image": "WhatsApp Image 2025-02-27 at 22.48.43_a8a638ed.jpg",
       "githubUrl": "https://github.com/Yugabharathi21/Think-Forge",
-      "technologies": ["React", "Canvas API", "WebGL", "Socket.io"]
+      "technologies": ["React", "Node.js", "Express", "MongoDB","FAST API"]
     }
   ]
 } 
