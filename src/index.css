@@ -6,7 +6,7 @@
 
 @layer base {
   body {
-    @apply antialiased bg-black font-['Inter'];
+    @apply antialiased bg-black font-['Share_Tech_Mono'];
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -34,7 +34,7 @@
   }
 
   .nav-link {
-    @apply relative px-4 py-2 text-white/90 hover:text-white transition-colors tracking-wide text-sm font-medium;
+    @apply relative px-4 py-2 text-white/90 hover:text-white transition-colors tracking-wide text-sm font-medium font-['Share_Tech_Mono'];
   }
 
   .nav-link::after {
@@ -51,11 +51,16 @@
   }
 
   .skill-badge {
-    @apply bg-black/50 px-4 py-2 rounded border border-white/10 text-sm font-mono backdrop-blur-sm
+    @apply bg-black/50 px-4 py-2 rounded border border-white/10 text-sm font-['Share_Tech_Mono'] backdrop-blur-sm
     hover:border-emerald-400/50 hover:bg-emerald-950/10 transition-all duration-300;
   }
 }
 
 .terminal-window {
   @apply glass-card;
+}
+
+/* Terminal text styles */
+.terminal-text {
+  @apply font-['Share_Tech_Mono'] tracking-wide;
 }

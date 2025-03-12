@@ -1,0 +1,22 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "FiveM Server Scripts",
+      "description": "Custom gameplay mechanics and server features",
+      "image": "https://images.unsplash.com/photo-1627398242454-45a1465c2479?auto=format&fit=crop&q=80&w=800",
+      "githubUrl": "https://github.com/yourusername/fivem-scripts",
+      "liveUrl": "https://your-fivem-server.com",
+      "technologies": ["Lua", "JavaScript", "FiveM API"]
+    },
+    {
+      "id": 2,
+      "title": "Stream Design Package",
+      "description": "Complete branding and overlay design for Twitch streamers",
+      "image": "https://images.unsplash.com/photo-1561736778-92e52a7769ef?auto=format&fit=crop&q=80&w=800",
+      "githubUrl": "https://github.com/yourusername/stream-design",
+      "liveUrl": "https://your-portfolio.com/stream-design",
+      "technologies": ["Adobe Photoshop", "After Effects", "Figma"]
+    }
+  ]
+} 
