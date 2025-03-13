@@ -3,6 +3,28 @@ import { Terminal, Gamepad2, Image, Youtube, Twitch, Mail, Github, Car, Palette,
 import { motion, AnimatePresence } from 'framer-motion';
 import projectsData from './data/projects.json';
 
+// Add keyframe animations
+const matrixRainKeyframes = `
+@keyframes matrix-rain {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(100%); }
+}
+`;
+
+const scanlineKeyframes = `
+@keyframes scanline {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(100%); }
+}
+`;
+
+// Add style tag to head
+if (typeof document !== 'undefined') {
+  const style = document.createElement('style');
+  style.textContent = matrixRainKeyframes + scanlineKeyframes;
+  document.head.appendChild(style);
+}
+
 interface MultimediaItem {
   title: string;
   description: string;
@@ -46,6 +68,25 @@ function App() {
 
   return (
     <div className="min-h-screen bg-black pixel-bg">
+      {/* Matrix Rain Effect */}
+      <div className="fixed inset-0 pointer-events-none opacity-10">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,255,0,0.1)_0%,transparent_100%)]"></div>
+        <div className="absolute inset-0" style={{
+          backgroundImage: 'repeating-linear-gradient(0deg, rgba(0, 255, 0, 0.15) 0px, rgba(0, 255, 0, 0.15) 1px, transparent 1px, transparent 2px)',
+          backgroundSize: '100% 2px',
+          animation: 'matrix-rain 20s linear infinite'
+        }}></div>
+      </div>
+      
+      {/* Scanlines Effect */}
+      <div className="fixed inset-0 pointer-events-none">
+        <div className="absolute inset-0" style={{
+          backgroundImage: 'repeating-linear-gradient(transparent 0px, transparent 1px, rgba(0, 0, 0, 0.3) 2px, rgba(0, 0, 0, 0.3) 3px)',
+          backgroundSize: '100% 3px',
+          animation: 'scanline 10s linear infinite'
+        }}></div>
+      </div>
+
       {/* Navigation */}
       <motion.nav 
         initial={{ y: -100 }}
@@ -121,74 +162,84 @@ function App() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
           >
-            <div className="flex flex-col md:flex-row md:items-center gap-8 relative">
-              {/* Terminal content on the left */}
-              <div className="flex-1 z-10 py-8">
-                <motion.div 
-                  className="flex items-center gap-3 mb-6"
-                  {...fadeInUp}
-                >
-                  <Terminal className="w-5 h-5 text-white/80" />
-                  <span className="text-white/80 text-sm tracking-wider terminal-text">[system@terminal] ~ $</span>
-                </motion.div>
-                <motion.h1 
-                  className="text-4xl font-bold mb-6 text-white tracking-tight"
-                  {...fadeInUp}
-                >
-                  YUGA BHARATHI JAISANKAR
-                </motion.h1>
-                <motion.p 
-                  className="text-lg text-white/80 mb-6 font-light"
-                  {...fadeInUp}
-                >
-                  II Year Computer Science Engineering @ Kongu Engineering College, Erode
-                </motion.p>
-                <motion.div 
-                  className="flex gap-6 mb-6"
-                  variants={staggerContainer}
-                  initial="initial"
-                  animate="animate"
-                >
-                  <a 
-                    href="https://github.com/Yugabharathi21" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="text-white/80 hover:text-white transition-all"
+            {/* Terminal Window Decorations */}
+            <div className="absolute top-0 left-0 w-full h-8 bg-black/50 border-b border-white/10 flex items-center px-4 gap-2">
+              <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
+              <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+              <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
+              <span className="text-white/50 text-xs ml-4 terminal-text">terminal@ybj:~</span>
+            </div>
+            <div className="pt-8">
+              <div className="flex flex-col md:flex-row md:items-center gap-8 relative">
+                {/* Terminal content on the left */}
+                <div className="flex-1 z-10 py-8">
+                  <motion.div 
+                    className="flex items-center gap-3 mb-6"
+                    {...fadeInUp}
                   >
-                    <Github className="w-5 h-5" />
-                  </a>
-                  <a 
-                    href="https://www.youtube.com/@SPz-G21" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="text-white/80 hover:text-white transition-all"
+                    <Terminal className="w-5 h-5 text-white/80" />
+                    <span className="text-white/80 text-sm tracking-wider terminal-text">[system@terminal] ~ $ whoami</span>
+                    <span className="animate-pulse">▊</span>
+                  </motion.div>
+                  <motion.h1 
+                    className="text-4xl font-bold mb-6 text-white tracking-tight"
+                    {...fadeInUp}
                   >
-                    <Youtube className="w-5 h-5" />
-                  </a>
-                  <a 
-                    href="https://www.linkedin.com/in/yuga-bharathi-jaisankar-2a426a291/" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="text-white/80 hover:text-white transition-all"
+                    YUGA BHARATHI JAISANKAR
+                  </motion.h1>
+                  <motion.p 
+                    className="text-lg text-white/80 mb-6 font-light"
+                    {...fadeInUp}
                   >
-                    <Mail className="w-5 h-5" />
-                  </a>
+                    II Year Computer Science Engineering @ Kongu Engineering College, Erode
+                  </motion.p>
+                  <motion.div 
+                    className="flex gap-6 mb-6"
+                    variants={staggerContainer}
+                    initial="initial"
+                    animate="animate"
+                  >
+                    <a 
+                      href="https://github.com/Yugabharathi21" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="text-white/80 hover:text-white transition-all"
+                    >
+                      <Github className="w-5 h-5" />
+                    </a>
+                    <a 
+                      href="https://www.youtube.com/@SPz-G21" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="text-white/80 hover:text-white transition-all"
+                    >
+                      <Youtube className="w-5 h-5" />
+                    </a>
+                    <a 
+                      href="https://www.linkedin.com/in/yuga-bharathi-jaisankar-2a426a291/" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="text-white/80 hover:text-white transition-all"
+                    >
+                      <Mail className="w-5 h-5" />
+                    </a>
+                  </motion.div>
+                </div>
+                
+                {/* Desktop Profile Image */}
+                <motion.div
+                  className="md:relative md:w-[280px] lg:w-[350px] absolute right-0 md:right-0 top-0 bottom-0 overflow-hidden hidden md:block"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 1 }}
+                >
+                  <motion.img
+                    src="/images/profile-bw.png"
+                    alt="Profile"
+                    className="w-[800px] md:w-[600px] lg:w-[800px] h-full object-cover object-[80%_top] scale-125 md:scale-110 lg:scale-135"
+                  />
                 </motion.div>
               </div>
-              
-              {/* Desktop Profile Image */}
-              <motion.div
-                className="md:relative md:w-[280px] lg:w-[350px] absolute right-0 md:right-0 top-0 bottom-0 overflow-hidden hidden md:block"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 1 }}
-              >
-                <motion.img
-                  src="/images/profile-bw.png"
-                  alt="Profile"
-                  className="w-[800px] md:w-[600px] lg:w-[800px] h-full object-cover object-[80%_top] scale-125 md:scale-110 lg:scale-135"
-                />
-              </motion.div>
             </div>
           </motion.div>
 
@@ -586,56 +637,76 @@ function ProjectCard({
 }) {
   return (
     <motion.div 
-      className="terminal-window overflow-hidden group"
+      className="terminal-window overflow-hidden group relative"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
       whileHover={{ scale: 1.02 }}
     >
-      <img 
-        src={image} 
-        alt={title} 
-        className="w-full h-48 object-cover grayscale hover:grayscale-0 transition-all transform hover:scale-105" 
-      />
-      <div className="p-6">
-        <h3 className="text-xl text-white mb-3 tracking-wide">{title}</h3>
-        <p className="text-white/70 mb-4">{description}</p>
-        
-        {/* Technologies */}
-        <div className="flex flex-wrap gap-2 mb-4">
-          {technologies.map((tech) => (
-            <span 
-              key={tech}
-              className="text-xs bg-emerald-900/20 text-emerald-400 px-2 py-1 rounded-full border border-emerald-400/20"
-            >
-              {tech}
-            </span>
-          ))}
+      {/* Terminal Header */}
+      <div className="absolute top-0 left-0 w-full h-6 bg-black/50 border-b border-white/10 flex items-center px-3 z-10">
+        <div className="flex items-center gap-1.5">
+          <div className="w-2 h-2 rounded-full bg-red-500/80"></div>
+          <div className="w-2 h-2 rounded-full bg-yellow-500/80"></div>
+          <div className="w-2 h-2 rounded-full bg-green-500/80"></div>
         </div>
+        <span className="text-white/50 text-xs ml-3 terminal-text">project@ybj:~$ cat {title.toLowerCase().replace(/\s+/g, '-')}.md</span>
+      </div>
 
-        {/* Project Links */}
-        <div className="flex gap-3">
-          <a 
-            href={githubUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 text-white/80 hover:text-white transition-all glass-card px-3 py-2 text-sm"
-          >
-            <Github className="w-4 h-4" />
-            <span className="terminal-text">View Source</span>
-          </a>
-          {liveUrl && (
+      {/* Project Content */}
+      <div className="pt-6">
+        <img 
+          src={image} 
+          alt={title} 
+          className="w-full h-48 object-cover grayscale group-hover:grayscale-0 transition-all transform group-hover:scale-105" 
+        />
+        <div className="p-6">
+          <div className="flex items-center gap-2 mb-3">
+            <span className="text-emerald-400">$</span>
+            <h3 className="text-xl text-white tracking-wide">{title}</h3>
+            <span className="animate-pulse text-emerald-400/50">▊</span>
+          </div>
+          <p className="text-white/70 mb-4 terminal-text">{description}</p>
+          
+          {/* Technologies with terminal style */}
+          <div className="flex flex-wrap gap-2 mb-4">
+            {technologies.map((tech) => (
+              <span 
+                key={tech}
+                className="text-xs bg-emerald-900/20 text-emerald-400 px-2 py-1 rounded-sm border border-emerald-400/20 terminal-text flex items-center gap-1"
+              >
+                <span className="text-emerald-400/50">&gt;</span>
+                {tech}
+              </span>
+            ))}
+          </div>
+
+          {/* Project Links with enhanced terminal style */}
+          <div className="flex gap-3">
             <a 
-              href={liveUrl}
+              href={githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-emerald-400/80 hover:text-emerald-400 transition-all glass-card px-3 py-2 text-sm"
+              className="flex items-center gap-2 text-white/80 hover:text-white transition-all glass-card px-3 py-2 text-sm group/link"
             >
-              <ExternalLink className="w-4 h-4" />
-              <span className="terminal-text">Live Demo</span>
+              <Github className="w-4 h-4" />
+              <span className="terminal-text">git clone</span>
+              <span className="opacity-0 group-hover/link:opacity-100 transition-opacity text-emerald-400/70">{githubUrl.split('/').pop()}</span>
             </a>
-          )}
+            {liveUrl && (
+              <a 
+                href={liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-emerald-400/80 hover:text-emerald-400 transition-all glass-card px-3 py-2 text-sm group/link"
+              >
+                <ExternalLink className="w-4 h-4" />
+                <span className="terminal-text">ssh</span>
+                <span className="opacity-0 group-hover/link:opacity-100 transition-opacity">{new URL(liveUrl).hostname}</span>
+              </a>
+            )}
+          </div>
         </div>
       </div>
     </motion.div>
