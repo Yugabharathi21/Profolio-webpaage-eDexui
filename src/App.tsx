@@ -114,6 +114,7 @@ function App() {
       <div className="pt-16">
         {/* Hero Section */}
         <section id="home" className="container mx-auto px-4 pt-20">
+          {/* Main Hero Content */}
           <motion.div 
             className="terminal-window pl-8 relative overflow-hidden"
             initial={{ opacity: 0, scale: 0.9 }}
@@ -175,9 +176,9 @@ function App() {
                 </motion.div>
               </div>
               
-              {/* Profile Image */}
+              {/* Desktop Profile Image */}
               <motion.div
-                className="md:relative md:w-[280px] absolute right-[8rem] top-0 bottom-0 overflow-hidden"
+                className="md:relative md:w-[280px] lg:w-[350px] absolute right-0 md:right-0 top-0 bottom-0 overflow-hidden hidden md:block"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1 }}
@@ -185,9 +186,25 @@ function App() {
                 <motion.img
                   src="/images/profile-bw.png"
                   alt="Profile"
-                  className="w-[800px] h-full object-cover object-[80%_top] scale-135"
+                  className="w-[800px] md:w-[600px] lg:w-[800px] h-full object-cover object-[80%_top] scale-125 md:scale-110 lg:scale-135"
                 />
               </motion.div>
+            </div>
+          </motion.div>
+
+          {/* Mobile Profile Image Box */}
+          <motion.div 
+            className="md:hidden mt-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <div className="terminal-window overflow-hidden h-[300px] relative">
+              <motion.img
+                src="/images/profile-bw.png"
+                alt="Profile"
+                className="w-full h-full object-cover object-top scale-155"
+              />
             </div>
           </motion.div>
         </section>
