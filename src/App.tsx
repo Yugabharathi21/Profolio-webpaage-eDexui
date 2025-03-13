@@ -437,8 +437,91 @@ function App() {
       </div>
 
       {/* Footer */}
-      <footer className="container mx-auto px-4 py-8 text-center">
-        <p className="text-sm text-white/80 pixel-border-thin inline-block p-2 tracking-wider terminal-text">[END OF LINE]</p>
+      <footer className="container mx-auto px-4 py-12">
+        <div className="flex flex-col items-center gap-6">
+          <div className="terminal-window p-4 w-full max-w-2xl">
+            <motion.pre
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.2 }}
+              className="text-emerald-400/80 text-xs sm:text-sm font-mono mb-4 leading-tight"
+            >
+              {`
+ ██╗   ██╗██████╗      ██╗
+ ╚██╗ ██╔╝██╔══██╗     ██║
+  ╚████╔╝ ██████╔╝     ██║
+   ╚██╔╝  ██╔══██╗██   ██║
+    ██║   ██████╔╝╚█████╔╝
+    ╚═╝   ╚═════╝  ╚════╝ 
+              `}
+            </motion.pre>
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4 }}
+              className="flex flex-col gap-2 terminal-text text-sm"
+            >
+              <p className="text-white/60">
+                <span className="text-emerald-400">$</span> whoami
+              </p>
+              <p className="text-white/80 ml-4">Yuga Bharathi Jaisankar</p>
+              
+              <p className="text-white/60">
+                <span className="text-emerald-400">$</span> uptime
+              </p>
+              <p className="text-white/80 ml-4">20 years of runtime, no crashes yet</p>
+              
+              <p className="text-white/60">
+                <span className="text-emerald-400">$</span> skills --list | grep "passion"
+              </p>
+              <p className="text-white/80 ml-4">Coding with passion since 2022</p>
+            </motion.div>
+          </div>
+
+          <div className="flex flex-col sm:flex-row items-center gap-3 text-sm text-white/60">
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.6 }}
+              className="terminal-text"
+            >
+              © 2024 YBJ
+            </motion.p>
+            <span className="hidden sm:block">•</span>
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.7 }}
+              className="flex items-center gap-2 terminal-text"
+            >
+              &lt;/&gt; with <span className="text-red-500 animate-pulse">❤</span> in React + TypeScript
+            </motion.p>
+            <span className="hidden sm:block">•</span>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.8 }}
+              className="flex flex-wrap justify-center gap-2"
+            >
+              <span className="terminal-text glass-card px-2 py-1">
+                <span className="text-emerald-400">$</span> rm -rf depression
+              </span>
+              <span className="terminal-text glass-card px-2 py-1">
+                <span className="text-emerald-400">$</span> sudo apt-get install happiness
+              </span>
+            </motion.div>
+          </div>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.9 }}
+            className="text-xs text-white/40 terminal-text text-center"
+          >
+            [Process completed with exit code 0] - No bugs were harmed in the making of this website
+          </motion.p>
+        </div>
       </footer>
 
       {/* Image Preview Modal */}
