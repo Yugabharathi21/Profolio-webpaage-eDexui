@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Terminal, Gamepad2, Image, Youtube, Twitch, Mail, Github, Car, Palette, Menu, X, ExternalLink, FileText } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import projectsData from './data/projects.json';
+import ProjectCard from './components/ProjectCard';
+import MultimediaCard from './components/MultimediaCard';
 
 // Add keyframe animations
 const matrixRainKeyframes = `
@@ -64,8 +66,65 @@ interface ProjectData {
 
 const typedProjectData = projectsData as ProjectData;
 
+interface ImagePreviewModalProps {
+  image: string;
+  title: string;
+  isOpen: boolean;
+  onClose: () => void;
+}
+
+function ImagePreviewModal({ image, title, isOpen, onClose }: ImagePreviewModalProps) {
+  return (
+    <AnimatePresence>
+      {isOpen && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onClick={onClose}
+          className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+        >
+          <motion.div
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.9, opacity: 0 }}
+            className="relative max-w-4xl w-full bg-black/50 p-2 rounded-lg overflow-hidden"
+          >
+            <img
+              src={image}
+              alt={title}
+              className="w-full h-auto object-contain rounded"
+            />
+            <button
+              onClick={onClose}
+              className="absolute top-4 right-4 text-white/80 hover:text-white bg-black/50 rounded-full p-2"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+}
+
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState('');
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const fadeInUp = {
     initial: { opacity: 0, y: 20 },
@@ -464,76 +523,101 @@ function App() {
           </div>
         </motion.section>
 
-        {/* Projects */}
-        <motion.section 
-          id="projects" 
-          className="container mx-auto px-4 py-20"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 className="text-2xl text-white mb-12 pixel-border-thin inline-block p-3 tracking-wide">FEATURED PROJECTS</h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            {typedProjectData.projects.map((project) => (
-              <ProjectCard
-                key={project.id}
-                title={project.title}
-                description={project.description}
-                image={project.image}
-                githubUrl={project.githubUrl}
-                liveUrl={project.liveUrl}
-                technologies={project.technologies}
-              />
-            ))}
-          </div>
-        </motion.section>
+        {/* Projects Section */}
+        <section id="projects" className="py-20">
+          <div className="container mx-auto px-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-12"
+            >
+              <div className="flex items-center gap-2 mb-3">
+                <span className="text-emerald-400">$</span>
+                <h2 className="text-3xl text-white">Projects</h2>
+                <span className="animate-pulse text-emerald-400/50">▊</span>
+              </div>
+              <p className="text-white/70 terminal-text">Here are some of my featured projects</p>
+            </motion.div>
 
-        <motion.section 
-        id="multimedia" 
-        className="container mx-auto px-4 py-20"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        >
-        <h2 className="text-2xl text-white mb-12 pixel-border-thin inline-block p-3 tracking-wide">MULTIMEDIA SHOWCASE</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 overflow-hidden">
-          {typedProjectData.multimedia.map((item, index) => (
-            <MultimediaCard
-              key={index}
-              title={item.title}
-              description={item.description}
-              image={item.image}
-              className="overflow-hidden max-w-full"
-            />
-          ))}
-        </div>
-       </motion.section>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {typedProjectData.projects.map((project) => (
+                <ProjectCard
+                  key={project.id}
+                  title={project.title}
+                  description={project.description}
+                  image={project.image}
+                  githubUrl={project.githubUrl}
+                  liveUrl={project.liveUrl}
+                  technologies={project.technologies}
+                />
+              ))}
+            </div>
 
-        {/* Work in Progress Section */}
-        <motion.section 
-          id="wip" 
-          className="container mx-auto px-4 py-20"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 className="text-2xl text-white mb-12 pixel-border-thin inline-block p-3 tracking-wide">WORK IN PROGRESS</h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            {typedProjectData.wip.map((project) => (
-              <ProjectCard
-                key={project.id}
-                title={`[WIP] ${project.title}`}
-                description={project.description}
-                image={project.image}
-                githubUrl={project.githubUrl}
-                technologies={project.technologies}
-              />
-            ))}
+            {/* Work in Progress Section */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mt-20 mb-12"
+            >
+              <div className="flex items-center gap-2 mb-3">
+                <span className="text-emerald-400">$</span>
+                <h2 className="text-3xl text-white">Work in Progress</h2>
+                <span className="animate-pulse text-emerald-400/50">▊</span>
+              </div>
+              <p className="text-white/70 terminal-text">Projects currently under development</p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {typedProjectData.wip.map((project) => (
+                <ProjectCard
+                  key={project.id}
+                  title={project.title}
+                  description={project.description}
+                  image={project.image}
+                  githubUrl={project.githubUrl}
+                  liveUrl={project.liveUrl}
+                  technologies={project.technologies}
+                />
+              ))}
+            </div>
           </div>
-        </motion.section>
+        </section>
+
+        {/* Multimedia Section */}
+        <section id="multimedia" className="py-20 bg-black/30">
+          <div className="container mx-auto px-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-12"
+            >
+              <div className="flex items-center gap-2 mb-3">
+                <span className="text-emerald-400">$</span>
+                <h2 className="text-3xl text-white">Multimedia</h2>
+                <span className="animate-pulse text-emerald-400/50">▊</span>
+              </div>
+              <p className="text-white/70 terminal-text">A showcase of my design work and multimedia projects</p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              {typedProjectData.multimedia.map((item, index) => (
+                <MultimediaCard
+                  key={index}
+                  title={item.title}
+                  description={item.description}
+                  image={item.image}
+                  onClick={() => {
+                    setSelectedImage(item.image);
+                    setIsModalOpen(true);
+                  }}
+                />
+              ))}
+            </div>
+          </div>
+        </section>
 
         {/* Contact */}
         <motion.section 
@@ -746,10 +830,10 @@ function App() {
 
       {/* Image Preview Modal */}
       <ImagePreviewModal
-        image={typedProjectData.multimedia[0].image}
+        image={selectedImage}
         title={typedProjectData.multimedia[0].title}
-        isOpen={false}
-        onClose={() => {}}
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
       />
     </div>
   );
@@ -786,213 +870,6 @@ function SkillCard({ icon, title, items, isCreativeTools = false }: {
         ))}
       </div>
     </motion.div>
-  );
-}
-
-function ProjectCard({ 
-  title, 
-  description, 
-  image, 
-  githubUrl, 
-  liveUrl, 
-  technologies 
-}: { 
-  title: string; 
-  description: string; 
-  image: string;
-  githubUrl: string;
-  liveUrl?: string;
-  technologies: string[];
-}) {
-  return (
-    <motion.div 
-      className="terminal-window overflow-hidden group relative"
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
-      whileHover={{ scale: 1.02 }}
-    >
-      {/* Terminal Header */}
-      <div className="absolute top-0 left-0 w-full h-6 bg-black/50 border-b border-white/10 flex items-center px-3 z-10">
-        <div className="flex items-center gap-1.5">
-          <div className="w-2 h-2 rounded-full bg-red-500/80"></div>
-          <div className="w-2 h-2 rounded-full bg-yellow-500/80"></div>
-          <div className="w-2 h-2 rounded-full bg-green-500/80"></div>
-        </div>
-        <span className="text-white/50 text-xs ml-3 terminal-text">project@ybj:~$ cat {title.toLowerCase().replace(/\s+/g, '-')}.md</span>
-      </div>
-
-      {/* Project Content */}
-      <div className="pt-6">
-        <img 
-          src={image} 
-          alt={title} 
-          className="w-full h-48 object-cover grayscale group-hover:grayscale-0 transition-all transform group-hover:scale-105" 
-        />
-        <div className="p-6">
-          <div className="flex items-center gap-2 mb-3">
-            <span className="text-emerald-400">$</span>
-            <h3 className="text-xl text-white tracking-wide">{title}</h3>
-            <span className="animate-pulse text-emerald-400/50">▊</span>
-          </div>
-          <p className="text-white/70 mb-4 terminal-text">{description}</p>
-          
-          {/* Technologies with terminal style */}
-          <div className="flex flex-wrap gap-2 mb-4">
-            {technologies.map((tech) => (
-              <span 
-                key={tech}
-                className="text-xs bg-emerald-900/20 text-emerald-400 px-2 py-1 rounded-sm border border-emerald-400/20 terminal-text flex items-center gap-1"
-              >
-                <span className="text-emerald-400/50">&gt;</span>
-                {tech}
-              </span>
-            ))}
-          </div>
-
-          {/* Project Links with enhanced terminal style */}
-          <div className="flex gap-3">
-            <a 
-              href={githubUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 text-white/80 hover:text-white transition-all glass-card px-3 py-2 text-sm group/link"
-            >
-              <Github className="w-4 h-4" />
-              <span className="terminal-text">git clone</span>
-              <span className="opacity-0 group-hover/link:opacity-100 transition-opacity text-emerald-400/70">{githubUrl.split('/').pop()}</span>
-            </a>
-            {liveUrl && (
-              <a 
-                href={liveUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-emerald-400/80 hover:text-emerald-400 transition-all glass-card px-3 py-2 text-sm group/link"
-              >
-                <ExternalLink className="w-4 h-4" />
-                <span className="terminal-text">ssh</span>
-                <span className="opacity-0 group-hover/link:opacity-100 transition-opacity">{new URL(liveUrl).hostname}</span>
-              </a>
-            )}
-          </div>
-        </div>
-      </div>
-    </motion.div>
-  );
-}
-
-function ImagePreviewModal({ 
-  image, 
-  title, 
-  isOpen, 
-  onClose 
-}: { 
-  image: string; 
-  title: string;
-  isOpen: boolean;
-  onClose: () => void;
-}) {
-  if (!isOpen) return null;
-
-  const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (e.target === e.currentTarget) {
-      onClose();
-    }
-  };
-
-  return (
-    <motion.div 
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 overflow-y-auto"
-      onClick={handleOverlayClick}
-    >
-      <div className="relative max-w-5xl w-full mx-auto my-8">
-        {/* Terminal Window Header */}
-        <div className="absolute top-0 left-0 w-full h-8 bg-black/50 border-b border-white/10 flex items-center px-4 gap-2 rounded-t-lg z-20">
-          <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
-          <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
-          <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
-          <span className="text-white/50 text-xs ml-4 terminal-text">preview@ybj:~$ display {title.toLowerCase().replace(/\s+/g, '-')}.png</span>
-        </div>
-
-        {/* Close Button */}
-        <button 
-          onClick={onClose}
-          className="absolute top-12 right-4 text-white/80 hover:text-white bg-black/50 hover:bg-black/70 rounded-full p-2 transition-all z-20"
-        >
-          <X className="w-6 h-6" />
-        </button>
-
-        {/* Image Container */}
-        <div className="bg-black/50 backdrop-blur-sm rounded-lg pt-8 pb-4 px-4">
-          <motion.img 
-            initial={{ scale: 0.9, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0.9, opacity: 0 }}
-            src={image} 
-            alt={title} 
-            className="w-full h-auto max-h-[80vh] object-contain rounded-lg shadow-2xl"
-          />
-          
-          {/* Image Title */}
-          <div className="mt-4 text-center">
-            <p className="text-white/80 terminal-text text-sm">{title}</p>
-          </div>
-        </div>
-      </div>
-    </motion.div>
-  );
-}
-
-function MultimediaCard({ 
-  title, 
-  description, 
-  image,
-  className
-}: { 
-  title: string; 
-  description: string; 
-  image: string;
-  className?: string;
-}) {
-  const [isPreviewOpen, setIsPreviewOpen] = useState(false);
-
-  return (
-    <>
-      <motion.div 
-        className={`terminal-window overflow-hidden group cursor-pointer ${className || ''}`}
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-        whileHover={{ scale: 1.02 }}
-        onClick={() => setIsPreviewOpen(true)}
-      >
-        <img 
-          src={image} 
-          alt={title} 
-          className="w-full h-48 object-cover hover:grayscale-0 transition-all transform hover:scale-105" 
-        />
-        <div className="p-6">
-          <h3 className="text-xl text-white mb-3 tracking-wide">{title}</h3>
-          <p className="text-white/70">{description}</p>
-        </div>
-      </motion.div>
-
-      <AnimatePresence>
-        {isPreviewOpen && (
-          <ImagePreviewModal
-            image={image}
-            title={title}
-            isOpen={isPreviewOpen}
-            onClose={() => setIsPreviewOpen(false)}
-          />
-        )}
-      </AnimatePresence>
-    </>
   );
 }
 
