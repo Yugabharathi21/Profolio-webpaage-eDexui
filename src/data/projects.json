@@ -4,7 +4,7 @@
       "id": 1,
       "title": "Portfolio Website",
       "description": "A modern portfolio website built with React and Tailwind CSS",
-      "image": "https://cdn.discordapp.com/attachments/1174513055405719674/1349442579158143057/preview.png?ex=67d31dd6&is=67d1cc56&hm=d101add2635ab6325b5999eff769a35dd10ff3f242ef82d18f07f6743a409efa&",
+      "image": "/images/project/1.png",
       "githubUrl": "https://github.com/Yugabharathi21/Portfolio-Webpage",
       "liveUrl": "https://yugabharathi.dev",
       "technologies": ["React", "Tailwind CSS", "TypeScript", "Framer Motion"]
@@ -13,7 +13,7 @@
       "id": 2,
       "title": "Event Promotion Website",
       "description": "A modern Fallout 3 Termal UI design Event promotion website for Cerscita 2k25",
-      "image": "https://media.licdn.com/dms/image/v2/D5622AQHLomv6obP2Iw/feedshare-shrink_2048_1536/B56ZTy6JeFHsAo-/0/1739242119253?e=1744848000&v=beta&t=s6il7VskCOd52Hpw6rmKJ8WUiNtAwAQ_17YHtndJcMA",
+      "image": "/images/project/3.jpg",
       "githubUrl": "https://github.com/Yugabharathi21/final-crescita/tree/main",
       "liveUrl": "https://cse-crescita-25.netlify.app/",
       "technologies": ["React", "Tailwind CSS", "TypeScript"]
@@ -22,97 +22,127 @@
       "id": 3,
       "title": "FiveM HUD for Qbox",
       "description": "Custom HUD forked and revamp by me from qbx-hud",
-      "image": "https://media.discordapp.net/attachments/1174513055405719674/1349442816727847053/415865001-5fc102b8-0b4f-4961-bf4c-2f33c5a166a2.png?ex=67d31e0e&is=67d1cc8e&hm=7c8772b66a04b2f225f3d90bb33b5f3a54fc8661ddc69ae167bf5acf3b0532b1&=&width=550&height=309",
+      "image": "/images/project/2.png",
       "githubUrl": "https://github.com/Yugabharathi21/spz-hud-fivem",
       "liveUrl": "https://your-fivem-server.com",
-      "technologies": ["Lua", "JavaScript", "FiveM API","HTML","css"]
+      "technologies": ["Lua", "JavaScript", "FiveM API", "HTML", "CSS"]
     }
   ],
   "multimedia": [
     {
-      "title": "YouTube Thumbnail Design",
-      "description": "Custom thumbnail design for gaming content",
-      "image": "https://media.discordapp.net/attachments/932869514138357791/1335631066488377466/ets2th.png?ex=67d24f1d&is=67d0fd9d&hm=42f22f46c5b804b099159fa5ac7bdbf24b38b5ddcf78d4140856009546ac461a&=&width=1522&height=856"
-    },
-    {
-      "title": "YouTube Thumbnail Design",
-      "description": "A thumbnail made for my client for freelancing",
-      "image": "https://media.discordapp.net/attachments/932869514138357791/1335631015019937823/tonybro.png?ex=67d24f10&is=67d0fd90&hm=a3d18b1425dd210931c0f8a2a0b27ef22f726796ea947addb69cc26417b1750a&=&width=1522&height=856"
-    },
-    {
-      "title": "YouTube Thumbnail Design",
-      "description": "A thumbnail made for my client for freelancing",
-      "image": "https://media.discordapp.net/attachments/1098676743457476689/1332360764383826031/batman_monkey_1.png?ex=67d246e8&is=67d0f568&hm=dedf8d1170bdc95d58024769a7dd0e0c357bd0a172a9772f960ec5ad2da5bba6&=&width=550&height=309"
-    },
-    {
-      "title": "YouTube Thumbnail Design",
-      "description": "A thumbnail made for my client for freelancing",
-      "image": "https://media.discordapp.net/attachments/932869514138357791/1335630898510692382/wils.png?ex=67d24ef5&is=67d0fd75&hm=e9978b15b90bd79ac80ed733c1dac79d079e66d68aa9f9dc73aea99afac3b47f&=&width=1522&height=856"
-    },
-    {
-      "title": "YouTube Thumbnail Design",
-      "description": "Custom thumbnail design for gaming content",
-      "image": "https://media.discordapp.net/attachments/932869514138357791/1135204127207596192/rbss_copy.jpg?ex=67d2df3a&is=67d18dba&hm=1d90da08789e0e0fef877ea777c1eb268d3d33365ec2096b71370e5f37c08e7a&=&width=1522&height=856"
-    },
-    {
-      "title": "YouTube Thumbnail Design",
-      "description": "Custom thumbnail design for gaming content",
-      "image": "https://media.discordapp.net/attachments/932869514138357791/1335630942974247036/lightibg_JVand_Monkey.png?ex=67d24eff&is=67d0fd7f&hm=c8ef4620e0df6f764713237f54ac4edc35619e88c5163aa4dd1f66c10e7540ba&=&width=1522&height=856"
-    },
-    {
-      "title": "YouTube Thumbnail Design",
-      "description": "Custom thumbnail design for gaming content",
-      "image": "https://media.discordapp.net/attachments/1098676743457476689/1332360797841784852/bwrbjv_copy.jpg?ex=67d246f0&is=67d0f570&hm=01d8eccb0fe61a1cc55f30c81b4cf28cc0c51c262476bda66e8b1bf28cf684b1&=&width=1522&height=856"
-    },
-    {
-      "title": "YouTube Logo",
-      "description": "A Logo Made For my clint in freelanceing job",
-      "image": "https://media.discordapp.net/attachments/1320713447503171634/1324682879707381802/SG.png?ex=67d2b091&is=67d15f11&hm=dc94442a4ceb30a00558bbddcf6093868257d14277aaee4aa6ac862b7acd9ee9&=&width=856&height=856"
-    },
-    {
-      "title": "YouTube Banner Design",
-      "description": "A Youtube Banner Made For my clint in freelanceing job",
-      "image": "https://media.discordapp.net/attachments/1320713447503171634/1324682878457610260/banner_sg.png?ex=67d2b091&is=67d15f11&hm=176c5a01c2a67f27eaa4003d36ab09a5621d42dee7a4adbb193869343ac8a3d0&=&width=1521&height=856"
-    },
-    {
-      "title": "YouTube Banner Design",
-      "description": "A Youtube Banner Made For my clint in freelanceing job",
-      "image": "https://media.discordapp.net/attachments/1188299145715400784/1339428879823274084/B_R_U_C_E_Banner.png?ex=67d2485a&is=67d0f6da&hm=1af97d6679a82d7b0039ed610812039d4deb47280a53b17ad22e8601709765e6&=&width=1522&height=856"
-    },
-    {
-      "title": "YouTube Banner Design",
-      "description": "A Youtube Banner Made For my clint in freelanceing job",
-      "image": "https://media.discordapp.net/attachments/1188299145715400784/1332361973794603101/prince_YT_Banner_copy.png?ex=67d24808&is=67d0f688&hm=61a70399f50b0f3c19bc1ea99cc68cf2e162ca0d0201bb83c1fb2f2023a26391&=&width=1522&height=856"
+      "title": "Poster Design",
+      "description": "A Poster Design Made for my Idol Lewis Hamilton for his brithday",
+      "image": "/images/multimedia/1.png"
     },
     {
       "title": "Poster Design",
       "description": "A Poster Design Made For my College Club for a Event",
-      "image": "https://media.discordapp.net/attachments/1349685792846385222/1349685862493065278/WEBIFY._2.png?ex=67d551e9&is=67d40069&hm=2c3df56b62e8e7964a345597ffd34d2901e40cae05723bdc7c8b7213287b71ae&=&width=626&height=968"
+      "image": "/images/multimedia/2.png"
     },
     {
       "title": "Poster Design",
       "description": "A Poster Design Made For my College Club for a Event",
-      "image": "https://media.discordapp.net/attachments/1349685792846385222/1349685879563616288/IIC_KEC_1.png?ex=67d551ed&is=67d4006d&hm=b4488703ef4437eb4454e41d7fe2e5b5877a08cba7318a9794f3c34fb9024bd1&=&width=774&height=968"
+      "image": "/images/multimedia/3.png"
     },
     {
       "title": "Poster Design",
       "description": "A Poster Design Made For my College Club for a Event",
-      "image": "https://media.discordapp.net/attachments/1349685792846385222/1349685899679633419/Black_and_Brown_Modern_Sunday_Service_Instagram_Post.png?ex=67d551f2&is=67d40072&hm=5f5ed0e2de06254a1bece1ca69c8cf2134e02adfdf8247b820614af0418188c7&=&width=968&height=968"
+      "image": "/images/multimedia/4.png"
     },
     {
-      "title": "A Logo Design",
+      "title": "Thumbnail Design",
+      "description": "A thumbnail made for me for freelancing Portfolio",
+      "image": "/images/multimedia/5.png"
+    },
+    {
+      "title": "Thumbnail Design",
+      "description": "A Thumbnail Design Made For my client in freelancing job",
+      "image": "/images/multimedia/6.png"
+    },
+    {
+      "title": "Thumbnail Design",
+      "description": "A thumbnail made for me for freelancing Portfolio",
+      "image": "/images/multimedia/7.png"
+    },
+    {
+      "title": "Thumbnail Design",
+      "description": "A Thumbnail Design Made For my client in freelancing job",
+      "image": "/images/multimedia/8.png"
+    },
+    {
+      "title": "Thumbnail Design",
+      "description": "A Thumbnail Design Made For my client in freelancing job",
+      "image": "/images/multimedia/9.png"
+    },
+    {
+      "title": "Thumbnail Design",
+      "description": "A thumbnail made for me for freelancing Portfolio" ,
+      "image": "/images/multimedia/10.png"
+    },
+    {
+      "title": "Thumbnail Design",
+      "description": "A thumbnail made for me for freelancing Portfolio"  ,
+      "image": "/images/multimedia/11.png"
+    },
+    {
+      "title": "Thumbnail Design",
+      "description": "A Thumbnail Design Made For my client in freelancing job",
+      "image": "/images/multimedia/12.png"
+    },
+    {
+      "title": "Thumbnail Design",
+      "description": "A Thumbnail Design Made For my client in freelancing job",
+      "image": "/images/multimedia/13.png"
+    },
+    {
+      "title": "Logo Design",
       "description": "A logo Design Made For my Client in a Freelance Project",
-      "image": "https://media.discordapp.net/attachments/932864364527108147/1349686145264386118/vadalogo.png?ex=67d5522c&is=67d400ac&hm=fc37706de52e390c7f74388d29128d61e5356ed0dc2ae67c78e0ba47fe12b6ed&=&width=968&height=968"
+      "image": "/images/multimedia/14.png"
     },
     {
-      "title": "A Logo Design",
-      "description": "A logo Design Made For my College Club Event",
-      "image": "https://media.discordapp.net/attachments/932864364527108147/1349686185424850965/webify_logo.png?ex=67d55236&is=67d400b6&hm=3327829b9a73da7d776789824b53ca7a369250a902c54c2a61d5e5c504c96e8b&=&width=968&height=968"
+      "title": "Logo Design",
+      "description": "A Poster Design Made For my College Club for a Event",
+      "image": "/images/multimedia/15.png"
     },
     {
-      "title": "A Fan Made Poster my idol",
-      "description": "A Fan made poster for 7 times world champion Lewis Hamilton, on his brithday",
-      "image": "https://media.discordapp.net/attachments/1174513055405719674/1174513332573720586/Hamilton.png?ex=67d57907&is=67d42787&hm=1a7c95d1bd18e63a4258b9ca585c7c71349668bb40534f15accb56ff706e2a8d&=&width=684&height=968"
+      "title": "Logo Design",
+      "description": "A logo Design Made For my Client in a Freelance Project",
+      "image": "/images/multimedia/16.png"
+    },
+    {
+      "title": "Logo Design",
+      "description": "A logo Design Made For my Client in a Freelance Project",
+      "image": "/images/multimedia/17.png"
+    },
+    {
+      "title": "Logo Design",
+      "description": "A logo Design Made For my Client in a Freelance Project",
+      "image": "/images/multimedia/18.png"
+    },
+    {
+      "title": "Thumbnail Design",
+      "description": "A thumbnail made for me for freelancing Portfolio",
+      "image": "/images/multimedia/19.png"
+    },
+    {
+      "title": "Banner Design",
+      "description": "A Banner Design made for my client in Freelance Project",
+      "image": "/images/multimedia/20.png"
+    },
+    {
+      "title": "Banner Design",
+      "description": "A Banner Design made for my client in Freelance Project",
+      "image": "/images/multimedia/21.png"
+    },
+    {
+      "title": "Banner Design",
+      "description":"A Banner Design made for my client in Freelance Project",
+      "image": "/images/multimedia/22.png"
+    },
+    {
+      "title": "Banner Design",
+      "description": "A Banner Design made for me",
+      "image": "/images/multimedia/23.png"
     }
   ],
   "wip": [
@@ -120,7 +150,7 @@
       "id": 1,
       "title": "A Organic selling website",
       "description": "it is a website made for 24 Hackathon Event by NITT's what the figma event",
-      "image": "https://media.discordapp.net/attachments/1174513055405719674/1349443146118856787/image.png?ex=67d31e5d&is=67d1ccdd&hm=6692690c803228e6fd343ff29c4a99c46d0fdc00ab548fd2b84d004d2ce34536&=&width=1601&height=856",
+      "image": "/images/project/4.jpg",
       "githubUrl": "https://github.com/Yugabharathi21/Code_Red_WhatTheFigma",
       "technologies": ["React", "Node.js", "Express", "MongoDB"]
     },
@@ -128,9 +158,17 @@
       "id": 2,
       "title": "ThinkForge - a Study planning helper Chat Bot",
       "description": "This is a website made for 24 Hackathon of KEC Hackathon",
-      "image": "https://media.discordapp.net/attachments/1174513055405719674/1349443046579896320/WhatsApp_Image_2025-02-27_at_22.48.43_fffe6b5c.jpg?ex=67d31e45&is=67d1ccc5&hm=d23e24bc35f4207ebb03d00f90049744f5e6bd05b83e3a6f6965542f842d9e89&=&width=387&height=960",
+      "image": "/images/project/5.png",
       "githubUrl": "https://github.com/Yugabharathi21/Think-Forge",
-      "technologies": ["React", "Node.js", "Express", "MongoDB","FAST API"]
+      "technologies": ["React", "Node.js", "Express", "MongoDB", "FAST API"]
+    },
+    {
+      "id": 3,
+      "title": "Craftify a Online E-Commerce Website",
+      "description": "This is a website made for My College Mini project for the subject WebTechnology",
+      "image": "/images/project/6.jpg",
+      "githubUrl": "https://github.com/Yugabharathi21/Think-Forge",
+      "technologies": ["React", "Node.js", "Express", "MongoDB"]
     }
   ]
 } 

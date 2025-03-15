@@ -369,15 +369,19 @@ function App() {
                     <span className="text-white/80 ml-2 terminal-text">cat about.md</span>
                   </div>
                   <div className="ml-4 mt-4 text-white/70 terminal-text space-y-4">
-                    <p>
-                      A passionate Computer Science Engineering student with a knack for creative problem-solving 
-                      and a deep interest in technology. Currently exploring the vast realms of software development, 
-                      with a special focus on FiveM development and multimedia design.
-                    </p>
-                    <p>
-                      When not coding, you'll find me crafting visual experiences, from thumbnails to stream graphics, 
-                      or diving deep into the world of game modding and asset creation.
-                    </p>
+                  <p>
+  I'm a passionate Computer Science Engineering student with a knack for creative problem-solving and a deep interest in technology. 
+  My journey in software development spans across web development, FiveM scripting, and multimedia design, where I blend technical expertise with creative vision.
+</p>
+<p>
+  Currently, I'm building my portfolio to showcase my projects, including FiveM scripts, web applications, and design works. 
+  This space reflects my skills in full-stack development, UI/UX design, and game modding, highlighting my ability to turn ideas into functional and visually compelling experiences.
+</p>
+<p>
+  Beyond coding, I enjoy crafting visual experiences—from thumbnails to stream graphics—and exploring game asset creation. 
+  My goal is to continuously learn, innovate, and contribute to projects that push creative and technical boundaries.
+</p>
+
                   </div>
                 </div>
 
