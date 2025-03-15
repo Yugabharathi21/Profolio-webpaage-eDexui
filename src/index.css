@@ -76,3 +76,12 @@
 .terminal-text {
   @apply font-['Share_Tech_Mono'] tracking-wide;
 }
+
+.terminal-badge {
+  @apply bg-emerald-900/20 text-emerald-400 px-3 py-1.5 rounded-sm border border-emerald-400/20 
+  terminal-text flex items-center gap-2 text-sm hover:bg-emerald-900/30 transition-colors;
+}
+
+.terminal-line {
+  @apply flex items-center text-sm font-mono;
+}

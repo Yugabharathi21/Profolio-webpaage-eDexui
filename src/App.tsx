@@ -9,6 +9,21 @@ const matrixRainKeyframes = `
   0% { transform: translateY(0); }
   100% { transform: translateY(100%); }
 }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.1; }
+  50% { opacity: 0.3; }
+}
+
+@keyframes grid-scroll {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(50px); }
+}
 `;
 
 const scanlineKeyframes = `
@@ -68,6 +83,36 @@ function App() {
 
   return (
     <div className="min-h-screen bg-black pixel-bg">
+      {/* Cyberpunk Grid */}
+      <div className="fixed inset-0 pointer-events-none">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `
+            linear-gradient(to right, rgba(0, 255, 255, 0.03) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(0, 255, 255, 0.03) 1px, transparent 1px)
+          `,
+          backgroundSize: '50px 50px',
+          animation: 'grid-scroll 20s linear infinite'
+        }}></div>
+      </div>
+
+      {/* Floating Orbs */}
+      <div className="fixed inset-0 pointer-events-none overflow-hidden">
+        {[...Array(5)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute rounded-full bg-emerald-500/10 blur-3xl"
+            style={{
+              width: `${Math.random() * 300 + 100}px`,
+              height: `${Math.random() * 300 + 100}px`,
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animation: `float ${Math.random() * 5 + 5}s ease-in-out infinite`,
+              animationDelay: `${Math.random() * 5}s`
+            }}
+          ></div>
+        ))}
+      </div>
+
       {/* Matrix Rain Effect */}
       <div className="fixed inset-0 pointer-events-none opacity-10">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,255,0,0.1)_0%,transparent_100%)]"></div>
@@ -84,6 +129,22 @@ function App() {
           backgroundImage: 'repeating-linear-gradient(transparent 0px, transparent 1px, rgba(0, 0, 0, 0.3) 2px, rgba(0, 0, 0, 0.3) 3px)',
           backgroundSize: '100% 3px',
           animation: 'scanline 10s linear infinite'
+        }}></div>
+      </div>
+
+      {/* Glowing Corner Accents */}
+      <div className="fixed inset-0 pointer-events-none">
+        <div className="absolute top-0 left-0 w-[200px] h-[200px] bg-gradient-to-br from-emerald-500/10 via-transparent to-transparent transform -translate-x-1/2 -translate-y-1/2 blur-2xl"></div>
+        <div className="absolute top-0 right-0 w-[200px] h-[200px] bg-gradient-to-bl from-emerald-500/10 via-transparent to-transparent transform translate-x-1/2 -translate-y-1/2 blur-2xl"></div>
+        <div className="absolute bottom-0 left-0 w-[200px] h-[200px] bg-gradient-to-tr from-emerald-500/10 via-transparent to-transparent transform -translate-x-1/2 translate-y-1/2 blur-2xl"></div>
+        <div className="absolute bottom-0 right-0 w-[200px] h-[200px] bg-gradient-to-tl from-emerald-500/10 via-transparent to-transparent transform translate-x-1/2 translate-y-1/2 blur-2xl"></div>
+      </div>
+
+      {/* Binary Code Background */}
+      <div className="fixed inset-0 pointer-events-none opacity-5">
+        <div className="absolute inset-0 overflow-hidden" style={{
+          backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'100\' height=\'100\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Ctext x=\'10\' y=\'20\' fill=\'%2300ff00\' font-family=\'monospace\' font-size=\'10\'%3E01%3C/text%3E%3Ctext x=\'30\' y=\'40\' fill=\'%2300ff00\' font-family=\'monospace\' font-size=\'10\'%3E10%3C/text%3E%3C/svg%3E")',
+          backgroundSize: '100px 100px'
         }}></div>
       </div>
 
@@ -260,6 +321,110 @@ function App() {
           </motion.div>
         </section>
 
+        {/* About Me Section */}
+        <motion.section 
+          id="about"
+          className="container mx-auto px-4 py-20"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="text-2xl text-white mb-12 pixel-border-thin inline-block p-3 tracking-wide">ABOUT.EXE</h2>
+          <div className="terminal-window p-8">
+            <div className="flex flex-col gap-6">
+              {/* Command History */}
+              <motion.div 
+                className="flex flex-col gap-4"
+                variants={staggerContainer}
+                initial="initial"
+                animate="animate"
+              >
+                {/* System Info */}
+                <div className="terminal-line">
+                  <span className="text-emerald-400">$</span>
+                  <span className="text-white/80 ml-2 terminal-text">neofetch</span>
+                </div>
+                <div className="grid md:grid-cols-2 gap-8 ml-4 terminal-text">
+                  <div className="text-white/70">
+                    <p><span className="text-emerald-400">OS:</span> Human 2.0</p>
+                    <p><span className="text-emerald-400">Kernel:</span> Creative 5.4.0</p>
+                    <p><span className="text-emerald-400">Uptime:</span> 20 years</p>
+                    <p><span className="text-emerald-400">Shell:</span> Problem_Solver v3.0</p>
+                    <p><span className="text-emerald-400">Resolution:</span> High Energy x Determination</p>
+                  </div>
+                  <div className="text-white/70">
+                    <p><span className="text-emerald-400">DE:</span> Development_Environment 2024</p>
+                    <p><span className="text-emerald-400">WM:</span> Work_Management 1.0</p>
+                    <p><span className="text-emerald-400">Terminal:</span> Tech_Enthusiast</p>
+                    <p><span className="text-emerald-400">CPU:</span> Brain @ 4.0GHz</p>
+                    <p><span className="text-emerald-400">GPU:</span> Creative_Vision RTX</p>
+                  </div>
+                </div>
+
+                {/* About Description */}
+                <div className="mt-6">
+                  <div className="terminal-line">
+                    <span className="text-emerald-400">$</span>
+                    <span className="text-white/80 ml-2 terminal-text">cat about.md</span>
+                  </div>
+                  <div className="ml-4 mt-4 text-white/70 terminal-text space-y-4">
+                    <p>
+                      A passionate Computer Science Engineering student with a knack for creative problem-solving 
+                      and a deep interest in technology. Currently exploring the vast realms of software development, 
+                      with a special focus on FiveM development and multimedia design.
+                    </p>
+                    <p>
+                      When not coding, you'll find me crafting visual experiences, from thumbnails to stream graphics, 
+                      or diving deep into the world of game modding and asset creation.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Quick Stats */}
+                <div className="mt-6">
+                  <div className="terminal-line">
+                    <span className="text-emerald-400">$</span>
+                    <span className="text-white/80 ml-2 terminal-text">stats --quick</span>
+                  </div>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4 ml-4 mt-4">
+                    <div className="glass-card p-4 text-center">
+                      <p className="text-emerald-400 text-2xl font-bold">2+</p>
+                      <p className="text-white/70 text-sm terminal-text">Years Coding</p>
+                    </div>
+                    <div className="glass-card p-4 text-center">
+                      <p className="text-emerald-400 text-2xl font-bold">{typedProjectData.projects.length + typedProjectData.wip.length}+</p>
+                      <p className="text-white/70 text-sm terminal-text">Projects</p>
+                    </div>
+                    <div className="glass-card p-4 text-center">
+                      <p className="text-emerald-400 text-2xl font-bold">{typedProjectData.multimedia.length}+</p>
+                      <p className="text-white/70 text-sm terminal-text">Designs</p>
+                    </div>
+                    <div className="glass-card p-4 text-center">
+                      <p className="text-emerald-400 text-2xl font-bold">∞</p>
+                      <p className="text-white/70 text-sm terminal-text">Creativity</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Current Status */}
+                <div className="mt-6">
+                  <div className="terminal-line">
+                    <span className="text-emerald-400">$</span>
+                    <span className="text-white/80 ml-2 terminal-text">current-status</span>
+                  </div>
+                  <div className="ml-4 mt-4 flex flex-wrap gap-3">
+                    <span className="terminal-badge">🎓 Learning New Tech</span>
+                    <span className="terminal-badge">💻 Building Projects</span>
+                    <span className="terminal-badge">🎨 Creating Designs</span>
+                    <span className="terminal-badge">🎮 Gaming</span>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </motion.section>
+
         {/* Skills Grid */}
         <motion.section 
           id="skills" 
@@ -320,27 +485,27 @@ function App() {
           </div>
         </motion.section>
 
-        {/* Multimedia Section */}
         <motion.section 
-          id="multimedia" 
-          className="container mx-auto px-4 py-20"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+        id="multimedia" 
+        className="container mx-auto px-4 py-20"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
         >
-          <h2 className="text-2xl text-white mb-12 pixel-border-thin inline-block p-3 tracking-wide">MULTIMEDIA SHOWCASE</h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            {typedProjectData.multimedia.map((item, index) => (
-              <MultimediaCard
-                key={index}
-                title={item.title}
-                description={item.description}
-                image={item.image}
-              />
-            ))}
-          </div>
-        </motion.section>
+        <h2 className="text-2xl text-white mb-12 pixel-border-thin inline-block p-3 tracking-wide">MULTIMEDIA SHOWCASE</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 overflow-hidden">
+          {typedProjectData.multimedia.map((item, index) => (
+            <MultimediaCard
+              key={index}
+              title={item.title}
+              description={item.description}
+              image={item.image}
+              className="overflow-hidden max-w-full"
+            />
+          ))}
+        </div>
+       </motion.section>
 
         {/* Work in Progress Section */}
         <motion.section 
@@ -727,7 +892,6 @@ function ImagePreviewModal({
   if (!isOpen) return null;
 
   const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    // Only close if clicking the overlay itself, not the image
     if (e.target === e.currentTarget) {
       onClose();
     }
@@ -738,24 +902,42 @@ function ImagePreviewModal({
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 overflow-y-auto"
       onClick={handleOverlayClick}
     >
-      <div className="relative max-w-7xl w-full">
+      <div className="relative max-w-5xl w-full mx-auto my-8">
+        {/* Terminal Window Header */}
+        <div className="absolute top-0 left-0 w-full h-8 bg-black/50 border-b border-white/10 flex items-center px-4 gap-2 rounded-t-lg z-20">
+          <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
+          <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+          <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
+          <span className="text-white/50 text-xs ml-4 terminal-text">preview@ybj:~$ display {title.toLowerCase().replace(/\s+/g, '-')}.png</span>
+        </div>
+
+        {/* Close Button */}
         <button 
           onClick={onClose}
-          className="absolute top-4 right-4 text-white/80 hover:text-white bg-black/50 hover:bg-black/70 rounded-full p-2 transition-all"
+          className="absolute top-12 right-4 text-white/80 hover:text-white bg-black/50 hover:bg-black/70 rounded-full p-2 transition-all z-20"
         >
           <X className="w-6 h-6" />
         </button>
-        <motion.img 
-          initial={{ scale: 0.9, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          exit={{ scale: 0.9, opacity: 0 }}
-          src={image} 
-          alt={title} 
-          className="w-full h-auto rounded-lg shadow-2xl"
-        />
+
+        {/* Image Container */}
+        <div className="bg-black/50 backdrop-blur-sm rounded-lg pt-8 pb-4 px-4">
+          <motion.img 
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.9, opacity: 0 }}
+            src={image} 
+            alt={title} 
+            className="w-full h-auto max-h-[80vh] object-contain rounded-lg shadow-2xl"
+          />
+          
+          {/* Image Title */}
+          <div className="mt-4 text-center">
+            <p className="text-white/80 terminal-text text-sm">{title}</p>
+          </div>
+        </div>
       </div>
     </motion.div>
   );
@@ -764,18 +946,20 @@ function ImagePreviewModal({
 function MultimediaCard({ 
   title, 
   description, 
-  image
+  image,
+  className
 }: { 
   title: string; 
   description: string; 
   image: string;
+  className?: string;
 }) {
   const [isPreviewOpen, setIsPreviewOpen] = useState(false);
 
   return (
     <>
       <motion.div 
-        className="terminal-window overflow-hidden group cursor-pointer"
+        className={`terminal-window overflow-hidden group cursor-pointer ${className || ''}`}
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
