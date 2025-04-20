@@ -6,7 +6,7 @@
       "description": "A modern portfolio website built with React and Tailwind CSS",
       "image": "/images/project/1.png",
       "githubUrl": "https://github.com/Yugabharathi21/Portfolio-Webpage",
-      "liveUrl": "https://yugabharathi.dev",
+      "liveUrl": "https://yugabharathi21.netlify.app",
       "technologies": ["React", "Tailwind CSS", "TypeScript", "Framer Motion"]
     },
     {
@@ -24,8 +24,17 @@
       "description": "Custom HUD forked and revamp by me from qbx-hud",
       "image": "/images/project/2.png",
       "githubUrl": "https://github.com/Yugabharathi21/spz-hud-fivem",
-      "liveUrl": "https://your-fivem-server.com",
+      "liveUrl": "#",
       "technologies": ["Lua", "JavaScript", "FiveM API", "HTML", "CSS"]
+    },
+    {
+      "id": 4,
+      "title": "ThinkForge - a Study planning helper Chat Bot",
+      "description": "This is a website made for 24 Hackathon of KEC Hackathon,and won at KEC CCC's Hackbuzz 2k25",
+      "image": "/images/project/5.png",
+      "githubUrl": "https://github.com/Yugabharathi21/Think-Forge",
+      "liveUrl": "#",
+      "technologies": ["React", "Node.js", "Express", "MongoDB", "FAST API"]
     }
   ],
   "multimedia": [
@@ -125,6 +134,11 @@
       "image": "/images/multimedia/19.png"
     },
     {
+      "title": "Thumbnail Design",
+      "description": "A thumbnail made for me for freelancing Portfolio",
+      "image": "/images/multimedia/24.png"
+    },
+    {
       "title": "Banner Design",
       "description": "A Banner Design made for my client in Freelance Project",
       "image": "/images/multimedia/20.png"
@@ -147,18 +161,10 @@
   ],
   "wip": [
     {
-      "id": 1,
-      "title": "A Organic selling website",
-      "description": "it is a website made for 24 Hackathon Event by NITT's what the figma event",
-      "image": "/images/project/4.jpg",
-      "githubUrl": "https://github.com/Yugabharathi21/Code_Red_WhatTheFigma",
-      "technologies": ["React", "Node.js", "Express", "MongoDB"]
-    },
-    {
       "id": 2,
-      "title": "ThinkForge - a Study planning helper Chat Bot",
-      "description": "This is a website made for 24 Hackathon of KEC Hackathon",
-      "image": "/images/project/5.png",
+      "title": "Ox-inventory Revamp by SPZYT",
+      "description": "This is a Revamp Project for ox-inventory by spz",
+      "image": "/images/project/7.png",
       "githubUrl": "https://github.com/Yugabharathi21/Think-Forge",
       "technologies": ["React", "Node.js", "Express", "MongoDB", "FAST API"]
     },

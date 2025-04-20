@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { FC, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Github, ExternalLink } from 'lucide-react';
 
@@ -11,15 +11,23 @@ interface ProjectCardProps {
   technologies: string[];
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ 
+const ProjectCard: FC<ProjectCardProps> = ({ 
   title, 
   description, 
   image, 
   githubUrl, 
   liveUrl, 
   technologies 
-}) => {
+}: ProjectCardProps) => {
   const [imageLoaded, setImageLoaded] = useState(false);
+
+  const getHostname = (url: string): string => {
+    try {
+      return new URL(url).hostname;
+    } catch {
+      return 'live-demo';
+    }
+  };
 
   return (
     <motion.div 
@@ -73,7 +81,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           
           {/* Technologies with terminal style */}
           <div className="flex flex-wrap gap-2 mb-4">
-            {technologies.map((tech) => (
+            {technologies.map((tech: string) => (
               <span 
                 key={tech}
                 className="text-xs bg-emerald-900/20 text-emerald-400 px-2 py-1 rounded-sm border border-emerald-400/20 terminal-text flex items-center gap-1"
@@ -90,22 +98,26 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
               href={githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-white/80 hover:text-white transition-all glass-card px-3 py-2 text-sm group/link"
+              className="w-1/2 flex items-center justify-center gap-2 text-white/80 hover:text-white transition-all glass-card px-3 py-2 text-sm group/link relative"
             >
               <Github className="w-4 h-4" />
               <span className="terminal-text">git clone</span>
-              <span className="opacity-0 group-hover/link:opacity-100 transition-opacity text-emerald-400/70">{githubUrl.split('/').pop()}</span>
+              <span className="absolute -top-8 left-1/2 -translate-x-1/2 bg-black/90 text-emerald-400/70 text-xs px-2 py-1 rounded-sm opacity-0 group-hover/link:opacity-100 transition-opacity whitespace-nowrap">
+                {githubUrl.split('/').pop()}
+              </span>
             </a>
-            {liveUrl && (
+            {liveUrl && liveUrl !== '#' && (
               <a 
                 href={liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-emerald-400/80 hover:text-emerald-400 transition-all glass-card px-3 py-2 text-sm group/link"
+                className="w-1/2 flex items-center justify-center gap-2 text-emerald-400/80 hover:text-emerald-400 transition-all glass-card px-3 py-2 text-sm group/link relative"
               >
                 <ExternalLink className="w-4 h-4" />
                 <span className="terminal-text">ssh</span>
-                <span className="opacity-0 group-hover/link:opacity-100 transition-opacity">{new URL(liveUrl).hostname}</span>
+                <span className="absolute -top-8 left-1/2 -translate-x-1/2 bg-black/90 text-emerald-400/70 text-xs px-2 py-1 rounded-sm opacity-0 group-hover/link:opacity-100 transition-opacity whitespace-nowrap">
+                  {getHostname(liveUrl)}
+                </span>
               </a>
             )}
           </div>
