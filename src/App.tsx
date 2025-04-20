@@ -7,11 +7,15 @@ import LoadingFallback from './components/LoadingFallback';
 import ImagePreviewModal from './components/ImagePreviewModal';
 import ResumePreviewModal from './components/ResumePreviewModal';
 import SkillCard from './components/SkillCard';
+import UnderConstruction from './components/UnderConstruction';
 
 // Lazy load components
 const ProjectCard = lazy(() => import('./components/ProjectCard'));
 const MultimediaCard = lazy(() => import('./components/MultimediaCard'));
 const BackgroundEffects = lazy(() => import('./components/BackgroundEffects'));
+
+// Check if site is under construction
+const isUnderConstruction = process.env.VITE_UNDER_CONSTRUCTION === 'false';
 
 // Animation keyframes
 const animations = {
@@ -93,6 +97,15 @@ function App() {
     setSelectedImage(image);
     setIsModalOpen(true);
   }, []);
+
+  if (isUnderConstruction) {
+    return (
+      <div className="min-h-screen bg-black">
+        <BackgroundEffects />
+        <UnderConstruction />
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-black pixel-bg">
