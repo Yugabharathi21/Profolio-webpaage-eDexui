@@ -1,4 +1,3 @@
-import { FC, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Github, ExternalLink } from 'lucide-react';
 
@@ -11,32 +10,12 @@ interface ProjectCardProps {
   technologies: string[];
 }
 
-const ProjectCard: FC<ProjectCardProps> = ({ 
-  title, 
-  description, 
-  image, 
-  githubUrl, 
-  liveUrl, 
-  technologies 
-}: ProjectCardProps) => {
-  const [imageLoaded, setImageLoaded] = useState(false);
-
-  const getHostname = (url: string): string => {
-    try {
-      return new URL(url).hostname;
-    } catch {
-      return 'live-demo';
-    }
-  };
-
+const ProjectCard = ({ title, description, image, githubUrl, liveUrl, technologies }: ProjectCardProps) => {
   return (
-    <motion.div 
-      className="terminal-window overflow-hidden group relative"
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
+    <motion.div
+      className="terminal-window overflow-hidden group"
       whileHover={{ scale: 1.02 }}
+      transition={{ duration: 0.2 }}
     >
       {/* Terminal Header */}
       <div className="absolute top-0 left-0 w-full h-6 bg-black/50 border-b border-white/10 flex items-center px-3 z-10">
@@ -45,82 +24,57 @@ const ProjectCard: FC<ProjectCardProps> = ({
           <div className="w-2 h-2 rounded-full bg-yellow-500/80"></div>
           <div className="w-2 h-2 rounded-full bg-green-500/80"></div>
         </div>
-        <span className="text-white/50 text-xs ml-3 terminal-text">project@ybj:~$ cat {title.toLowerCase().replace(/\s+/g, '-')}.md</span>
+        <span className="text-white/50 text-xs ml-3 terminal-text">project@ybj:~$ view {title.toLowerCase().replace(/\s+/g, '-')}</span>
       </div>
 
-      {/* Project Content */}
-      <div className="pt-6">
-        <div className="relative w-full h-48 overflow-hidden">
-          {/* Loading placeholder */}
-          <div 
-            className={`absolute inset-0 bg-emerald-900/20 backdrop-blur-sm transition-opacity duration-300 ${
-              imageLoaded ? 'opacity-0' : 'opacity-100'
-            }`}
-          >
-            <div className="h-full w-full animate-pulse bg-emerald-500/10"></div>
-          </div>
-          
-          <img 
-            src={image} 
-            alt={title}
-            loading="lazy"
-            onLoad={() => setImageLoaded(true)}
-            className={`w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all transform group-hover:scale-105 ${
-              imageLoaded ? 'opacity-100' : 'opacity-0'
-            }`}
-          />
+      {/* Project Image */}
+      <div className="relative aspect-video w-full">
+        <img
+          src={image}
+          alt={title}
+          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+        />
+      </div>
+
+      {/* Project Info */}
+      <div className="p-6">
+        <h3 className="text-white text-xl font-medium mb-2">{title}</h3>
+        <p className="text-white/70 text-sm mb-4 line-clamp-2">{description}</p>
+
+        {/* Technologies */}
+        <div className="flex flex-wrap gap-2 mb-4">
+          {technologies.map((tech, index) => (
+            <span
+              key={index}
+              className="text-xs px-2 py-1 rounded-sm bg-emerald-900/20 text-emerald-400 border border-emerald-400/20"
+            >
+              {tech}
+            </span>
+          ))}
         </div>
 
-        <div className="p-6">
-          <div className="flex items-center gap-2 mb-3">
-            <span className="text-emerald-400">$</span>
-            <h3 className="text-xl text-white tracking-wide">{title}</h3>
-            <span className="animate-pulse text-emerald-400/50">▊</span>
-          </div>
-          <p className="text-white/70 mb-4 terminal-text">{description}</p>
-          
-          {/* Technologies with terminal style */}
-          <div className="flex flex-wrap gap-2 mb-4">
-            {technologies.map((tech: string) => (
-              <span 
-                key={tech}
-                className="text-xs bg-emerald-900/20 text-emerald-400 px-2 py-1 rounded-sm border border-emerald-400/20 terminal-text flex items-center gap-1"
-              >
-                <span className="text-emerald-400/50">&gt;</span>
-                {tech}
-              </span>
-            ))}
-          </div>
-
-          {/* Project Links with enhanced terminal style */}
-          <div className="flex gap-3">
-            <a 
-              href={githubUrl}
+        {/* Links */}
+        <div className="flex gap-4">
+          <a
+            href={githubUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-white/80 hover:text-white transition-colors"
+          >
+            <Github className="w-4 h-4" />
+            <span className="text-sm">GitHub</span>
+          </a>
+          {liveUrl && (
+            <a
+              href={liveUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-1/2 flex items-center justify-center gap-2 text-white/80 hover:text-white transition-all glass-card px-3 py-2 text-sm group/link relative"
+              className="flex items-center gap-2 text-white/80 hover:text-white transition-colors"
             >
-              <Github className="w-4 h-4" />
-              <span className="terminal-text">git clone</span>
-              <span className="absolute -top-8 left-1/2 -translate-x-1/2 bg-black/90 text-emerald-400/70 text-xs px-2 py-1 rounded-sm opacity-0 group-hover/link:opacity-100 transition-opacity whitespace-nowrap">
-                {githubUrl.split('/').pop()}
-              </span>
+              <ExternalLink className="w-4 h-4" />
+              <span className="text-sm">Live Demo</span>
             </a>
-            {liveUrl && liveUrl !== '#' && (
-              <a 
-                href={liveUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-1/2 flex items-center justify-center gap-2 text-emerald-400/80 hover:text-emerald-400 transition-all glass-card px-3 py-2 text-sm group/link relative"
-              >
-                <ExternalLink className="w-4 h-4" />
-                <span className="terminal-text">ssh</span>
-                <span className="absolute -top-8 left-1/2 -translate-x-1/2 bg-black/90 text-emerald-400/70 text-xs px-2 py-1 rounded-sm opacity-0 group-hover/link:opacity-100 transition-opacity whitespace-nowrap">
-                  {getHostname(liveUrl)}
-                </span>
-              </a>
-            )}
-          </div>
+          )}
         </div>
       </div>
     </motion.div>
